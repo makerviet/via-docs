@@ -3,7 +3,7 @@ title: "Làm quen với giả lập VIA Simulator"
 weight: 90
 ---
 
-![Comming Soon](/media/under_construction.png)
+![Coming Soon](/media/under_construction.png)
 
 Trang này đang được hoàn thiện. Các tài liệu cho VIA sẽ sớm được cập nhật đầy đủ.
 
