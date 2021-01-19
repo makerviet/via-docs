@@ -1,5 +1,7 @@
 # VIA - Vietnam Autonomous
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/71d1ce68-f05d-41b1-ae6d-78c83e0167ca/deploy-status)](https://app.netlify.com/sites/via-docs/deploys)
+
 **VIA - Vietnam Autonomous** là một dự án nguồn mở được khởi xướng bởi [MakerHanoi](https://www.facebook.com/makerhanoi) nhằm tạo ra một nền tảng mở về xe tự hành để học sinh, sinh viên và những người đam mê công nghệ và trí tuệ nhân tạo có thể tạo ra chiếc xe tự hành in 3D cho riêng mình, phục vụ mục đích học tập, nghiên cứu. Dự án này gồm 4 phần chính:
 
 - **VIA Bot:** Xe tự hành in 3D nguồn mở. Bao gồm khung xe in 3D, các bo mạch và các thuật toán phát hiện làn đường, biển báo và điều khiển xe. Phần cứng của chiếc xe này được thiết kế tối ưu về chi phí để mọi người đều có thể tiếp cận.
