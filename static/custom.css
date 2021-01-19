@@ -1,0 +1,9 @@
+.gdoc-nav__list li ul li {
+    list-style: decimal-leading-zero;
+    margin-left: 1.2rem;
+}
+
+.gdoc-header {
+    background: #222;
+    padding-top: 1rem;
+}

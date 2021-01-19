@@ -1,0 +1,13 @@
+---
+more:
+  - name: Các bài viết
+    ref: "/posts"
+    icon: "notification"
+  - name: MakerHanoi
+    ref: "http://makerviet.org/"
+    external: true
+    icon: "path"
+  - name: "Đóng góp cho website này"
+    ref: "https://github.com/makerhanoi/via-docso"
+    external: true
+    icon: "github"
