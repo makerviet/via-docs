@@ -8,6 +8,6 @@ more:
     external: true
     icon: "path"
   - name: "Đóng góp cho website này"
-    ref: "https://github.com/makerhanoi/via-docso"
+    ref: "https://github.com/makerhanoi/via-docs"
     external: true
     icon: "github"
