@@ -8,3 +8,16 @@
     background: linear-gradient(90deg, rgba(255,0,14,1) 0%, rgba(140,0,255,1) 100%);
     padding-top: 0.5rem;
 }
+
+.gdoc-footer {
+    background: #fafafa;
+    color: #888;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.gdoc-footer__item {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
