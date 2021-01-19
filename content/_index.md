@@ -1,6 +1,11 @@
 ---
-title: Trang chủ
+title: VIA
 ---
+
+<div style="text-align: center">
+    <img src="/media/via-logo.png" style="width: 8rem; border-radius: 50%; border: 3px solid #636162; padding: 0.5rem">
+    <h1 style="display: block">VIA - Vietnam Autonomous</h1>
+</div>
 
 **VIA - Vietnam Autonomous** là một dự án nguồn mở được khởi xướng bởi [MakerHanoi](https://www.facebook.com/makerhanoi) nhằm tạo ra một nền tảng mở về xe tự hành để học sinh, sinh viên và những người đam mê công nghệ và trí tuệ nhân tạo có thể tạo ra chiếc xe tự hành in 3D cho riêng mình, phục vụ mục đích học tập, nghiên cứu. Dự án này gồm 4 phần chính:
 
