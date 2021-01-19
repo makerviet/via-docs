@@ -4,6 +4,7 @@
 }
 
 .gdoc-header {
-    background: #222;
-    padding-top: 1rem;
+    background: rgb(255,0,14);
+    background: linear-gradient(90deg, rgba(255,0,14,1) 0%, rgba(140,0,255,1) 100%);
+    padding-top: 0.5rem;
 }
