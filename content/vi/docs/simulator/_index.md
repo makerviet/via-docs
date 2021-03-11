@@ -1,5 +1,5 @@
 ---
-title: Thử nghiệm với VIA Simulator
+title: VIA Simulator
 weight: 20
 ---
 
