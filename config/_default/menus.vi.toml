@@ -1,0 +1,17 @@
+[[main]]
+  identifier = "docs"
+  name = "Tài liệu"
+  url = "docs"
+  weight = 1
+
+[[main]]
+  identifier = "updates"
+  name = "Cập nhật"
+  url = "updates"
+  weight = 2
+
+[[main]]
+  identifier = "blog"
+  name = "Blog"
+  url = "blog"
+  weight = 3

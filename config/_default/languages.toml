@@ -1,0 +1,11 @@
+[vi]
+  title = "VIA - Vietnam Autonomous"
+  languageName = "Tiếng Việt"
+  weight = 1
+  contentdir = "content/vi"
+
+[en]
+  title = "VIA - Vietnam Autonomous"
+  languageName = "English"
+  weight = 2
+  contentdir = "content/vi"
