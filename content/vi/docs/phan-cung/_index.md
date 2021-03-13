@@ -1,5 +1,5 @@
 ---
-title: VIA Bot
+title: VIA Bot - Phần cứng
 weight: 30
 ---
 

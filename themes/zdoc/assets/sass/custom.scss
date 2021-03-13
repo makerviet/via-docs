@@ -1,0 +1,30 @@
+.menu__list li {
+    text-overflow: initial;
+    overflow: initial;
+    white-space: initial;
+}
+
+.menu .active {
+    line-height: normal;
+}
+
+.menu__title {
+    height: fit-content;
+}
+
+.menu__title--collapse, .menu__title--collapse-text {
+    font-weight: 700;
+    color: #007d9c;
+}
+
+.menu__list {
+    height: fit-content;
+}
+
+.menu__list li {
+    margin: .25rem 0 .25rem 1.25rem;
+}
+
+.menu > ul > li, .menu > ul > li span,  .menu > ul > li a{
+    color: #222!important;
+}

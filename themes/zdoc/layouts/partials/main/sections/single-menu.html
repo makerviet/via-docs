@@ -26,6 +26,9 @@
   {{ $active := in $currentURL $ctx.Permalink }}
   {{ $active = or $active (eq $sectionName1 $sectionName2) }}
   {{ $active = or $active (in $currentURL $sectionName1) }}
+
+  <!-- TODO: We need all menu open => I set active  = True here -->
+  {{ $active := true }}
   
   {{ if $ctx.Params.Collapsible }}
   <li class="menu__title--collapse {{ if $active }}active{{ end }}" data-depth="{{ $depth }}" data-permalink="{{ $ctx.Permalink }}">

@@ -64,3 +64,5 @@ $light-nav-icon-color: {{ .Site.Data.color.light_nav_icon_color }};
 @import 'pages/single';
 @import 'pages/list';
 @import 'pages/blog';
+
+@import 'custom';

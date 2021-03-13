@@ -22,10 +22,15 @@
   
   {{ $sectionName1 := index (last 1 (split (delimit (split $ctx.Permalink "/") "," "") ",")) 0 }}
   {{ $sectionName2 := index (last 2 (split (delimit (split $currentURL "/") "," "") ",")) 0 }}
-  
+
   {{ $active := in $currentURL $ctx.Permalink }}
   {{ $active = or $active (eq $sectionName1 $sectionName2) }}
   {{ $active = or $active (in $currentURL $sectionName1) }}
+
+  <!-- TODO: We need all menu open => I set active  = True here -->
+  {{ $active := true }}
+
+  {{ if $active }}active{{ end }}
   
   {{ if $ctx.Params.Collapsible }}
   <li class="menu__title--collapse {{ if $active }}active{{ end }}" data-depth="{{ $depth }}">
