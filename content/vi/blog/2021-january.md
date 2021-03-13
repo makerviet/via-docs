@@ -3,7 +3,6 @@ title: "Ra mắt website tháng 01 - 2021"
 description: "VIA - Vietnam Autonomous là một dự án nguồn mở được khởi xướng bởi MakerHanoi nhằm tạo ra một nền tảng mở về xe tự hành để học sinh, sinh viên và những người đam mê công nghệ và trí tuệ nhân tạo có thể tạo ra chiếc xe tự hành in 3D cho riêng mình, phục vụ mục đích học tập, nghiên cứu."
 date: 2020-01-28T00:10:48+09:00
 draft: false
-weight: -4
 ---
 
 Tháng 1 năm 2021, website dự án VIA chính thức được ra mắt tại địa chỉ <https://via.makerviet.org/>.
