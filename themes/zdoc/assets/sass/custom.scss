@@ -12,7 +12,8 @@
     height: fit-content;
 }
 
-.menu__title--collapse, .menu__title--collapse-text {
+.menu__title--collapse,
+.menu__title--collapse-text {
     font-weight: 700;
     color: #007d9c;
 }
@@ -25,6 +26,29 @@
     margin: .25rem 0 .25rem 1.25rem;
 }
 
-.menu > ul > li, .menu > ul > li span,  .menu > ul > li a{
-    color: #222!important;
+.menu>ul>li,
+.menu>ul>li span,
+.menu>ul>li a {
+    color: #222 !important;
+}
+
+
+.home__landing {
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto!important;
+}
+
+.home__landing--img img {
+    width: 60rem;
+}
+
+.home__landing--txt .title {
+    font-size: 3.2rem;
+}
+
+.home__landing--txt .text {
+    font-size: 1.2rem;
+    text-align: justify;
 }
