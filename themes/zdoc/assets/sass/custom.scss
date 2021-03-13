@@ -1,4 +1,4 @@
-.menu__list li {
+.menu__list li, .menu__title--collapse>span {
     text-overflow: initial;
     overflow: initial;
     white-space: initial;
@@ -20,6 +20,11 @@
 
 .menu__list {
     height: fit-content;
+    list-style: decimal;
+}
+
+.menu > ul > li {
+    margin-top: 1rem;
 }
 
 .menu__list li {
@@ -32,6 +37,21 @@
     color: #222 !important;
 }
 
+.menu__title--collapse > span {
+    max-width: none;
+}
+
+.menu__title--icon {
+    margin-left: auto;
+}
+
+.menu__title {
+    list-style: decimal;
+}
+
+.menu__list li {
+    margin-left: 2rem;
+}
 
 .home__landing {
     max-width: 60rem;

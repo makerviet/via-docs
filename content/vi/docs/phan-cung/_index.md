@@ -1,11 +1,9 @@
 ---
 title: VIA Bot - Phần cứng
+description: "Các thiết kế robot phát triển bởi VIA, là nền tảng để cộng đồng xây dựng và phát triển các xe tự hành in 3D."
 weight: 30
+collapsible: true
 ---
 
 
-![Coming Soon](/media/under_construction.png)
-
-Trang này đang được hoàn thiện. Các tài liệu cho VIA sẽ sớm được cập nhật đầy đủ.
-
-Hãy tham gia ngay với chúng tôi tại [Fanpage MakerHanoi](https://www.facebook.com/makerhanoi) hoặc email [makerhanoi@gmail.com](mailto:makerhanoi@gmail.com). Đóng góp của bạn có thể đẩy nhanh tiến độ hoàn thiện.
+Đang cập nhật...
