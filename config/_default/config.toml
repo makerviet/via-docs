@@ -6,7 +6,7 @@ defaultContentLanguage = "vi"
 defaultContentLanguageInSubdir = false
 hasCJKLanguage = false
 
-copyright = "&copy;{year}, All Rights Reserved"
+copyright = "&copy; {year}, All Rights Reserved"
 timeout = 10000
 enableEmoji = true
 paginate = 13
