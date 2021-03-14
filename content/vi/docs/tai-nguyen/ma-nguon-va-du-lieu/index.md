@@ -13,7 +13,7 @@ Các repo mã nguồn của dự án:
 - Mã nguồn website dự án: <https://github.com/makerhanoi/via-docs>.
 - Mã nguồn VIA Bot Mini - phiên bản tối giản của VIA bot: <https://github.com/makerhanoi/via-bot-mini>. - Đang phát triển.
 - Mã nguồn VIA Bot - mô hình xe in 3D nguồn mở: <https://github.com/makerhanoi/via-bot>.
-- Mã nguồn giả lập mô hình xe tự hành, tập trung tương thích với nhiều, dễ chỉnh sửa, tạo bản đồ: <https://github.com/makerhanoi/via-simulator>.
+- Mã nguồn giả lập mô hình xe tự hành, tập trung tương thích với nhiều, dễ chỉnh sửa, tạo bản đồ: <https://github.com/makerhanoi/via-simulation-jeep>.
 
 ## Dữ liệu
 
