@@ -389,3 +389,8 @@ python drive.py
 ```
 
 ##### 3. Bấm `START` trong giả lập
+
+
+##### Hướng dẫn tạo bản đồ mới trên VIA Simulator và chạy chế độ xe tự hành với mã nguồn trong dự án Hello VIA!
+
+{{< youtube "BniOKSV1wUM" >}}
