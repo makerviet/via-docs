@@ -21,11 +21,7 @@ seconds_in_a_day = 24 * 60 * 60
 seconds_in_a_day
 ```
 
-
-
-
     86400
-
 
 
 Việc chỉnh sửa một ô code chỉ đơn giản là nhấp chuột vào ô chứa code và sửa như trong một chương trình chỉnh sửa thông thường.
@@ -367,8 +363,11 @@ Sau khi thử nghiệm các thuật toán như trên, trong phần này, ta sẽ
 
 #### 1. Cài đặt môi trường
 
-- Tải giả lập tại https://drive.google.com/file/d/1mnS5ti-rFiAOmR95ymvyqmuMSfg6R12z/view?usp=sharing.
-- Clone hoặc tải mã nguồn điểu khiển xe tại https://github.com/VNOpenAI/hello-via
+- Tải giả lập và giải nén: https://github.com/makerhanoi/via-simulation-jeep/releases/tag/v0.1-alpha.
+    + Giả lập cho Windows: via-simulation-windows-x86_64-20210314.zip
+    + Giả lập cho Linux: via-simulation-linux-x86_64-20210314.zip
+    + Giả lập cho macOS: via-simulation-macos-x86_64-20210314.zip
+- Clone hoặc tải mã nguồn điểu khiển xe tại https://github.com/makerhanoi/hello-via.
 - Cài đặt Miniconda 3: https://docs.conda.io/en/latest/miniconda.html.
 - Yêu cầu môi trường: Python 3.7
 
@@ -381,7 +380,7 @@ pip install -r requirements.txt
 
 ##### 1. Chạy giả lập 
 
-- Sau khi giải nén, chạy `autocar_sim.exe` để mở giả lập.
+- Sau khi giải nén, chạy `Linux.x86_64` (Linux),  `VIA Simulation - Jeep.exe` (Windows) hoặc file chạy tương ứng cho macOS để mở giả lập.
 
 ##### 2. Chạy chương trình điều khiển xe
 
