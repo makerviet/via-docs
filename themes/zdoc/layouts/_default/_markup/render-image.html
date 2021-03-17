@@ -1,3 +1,4 @@
 <p class="md__image">
   <img src="{{ .Destination }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
+  <p style="text-align: center;"><b>{{ safeHTML .Text }}</b></p>
 </p>
