@@ -1,12 +1,12 @@
 [[main]]
   identifier = "docs"
-  name = "Tài liệu"
+  name = "Documentation"
   url = "docs"
   weight = 1
 
 [[main]]
   identifier = "updates"
-  name = "Cập nhật"
+  name = "Updates"
   url = "updates"
   weight = 2
 
