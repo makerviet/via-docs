@@ -2,10 +2,8 @@
   title = "VIA - Vietnam Autonomous"
   languageName = "Tiếng Việt"
   weight = 10
-  contentdir = "content/vi"
 
 [en]
   title = "VIA - Vietnam Autonomous"
   languageName = "English"
   weight = 20
-  contentdir = "content/en"

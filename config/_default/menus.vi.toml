@@ -1,23 +1,23 @@
 [[main]]
-  identifier = "docs"
+  identifier = "Docs"
   name = "Tài liệu"
   url = "docs"
   weight = 1
 
 [[main]]
-  identifier = "updates"
+  identifier = "Updates"
   name = "Cập nhật"
   url = "updates"
   weight = 2
 
 [[main]]
-  identifier = "blog"
+  identifier = "Blog"
   name = "Blog"
   url = "blog"
   weight = 3
 
 [[main]]
-  identifier = "contact"
+  identifier = "Contact"
   name = "Liên hệ"
   url = "contact"
   weight = 4
