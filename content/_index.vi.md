@@ -27,20 +27,20 @@ footer:
     - title: Tài nguyên
       links:
         - title: Tài liệu
-          link: /docs/
+          link: /vi/docs/
         - title: Blog
-          link: /blog/
+          link: /vi/blog/
     - title: Mã nguồn
       links:
         - title: GitHub
           link: https://github.com/makerhanoi/via-docs
         - title: Cập nhật mới nhất
-          link: /updates/
+          link: /vi/updates/
     - title: Liên kết
       links:
         - title: Nhóm Facebook
           link: https://www.facebook.com/groups/572642390175408/
-        - title: Maker Hà Nội
+        - title: Maker Hanoi
           link: https://www.facebook.com/makerhanoi
   contents: 
     align: left
@@ -68,7 +68,7 @@ sections:
         color: white
         button: 
           name: Tìm hiểu
-          link: #
+          link: "/vi/docs/"
           size: large
           target: _blank
           color: '#222'
@@ -80,7 +80,7 @@ sections:
         color: white
         button: 
           name: Tìm hiểu
-          link: #
+          link: "/vi/docs/"
           size: large
           target: _blank
           color: '#222'
@@ -92,14 +92,14 @@ sections:
         color: white
         button: 
           name: Tìm hiểu
-          link: #
+          link: "/vi/docs/"
           size: large
           target: _blank
           color: '#222'
           bgcolor: 'white'
-  - bgcolor: DarkSlateBlue
+  - bgcolor: "#04718c"
     type: normal
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eleifend erat. Integer eget mattis augue. Suspendisse semper laoreet tortor sed convallis. Nulla ac euismod lorem"
+    # description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eleifend erat. Integer eget mattis augue. Suspendisse semper laoreet tortor sed convallis. Nulla ac euismod lorem"
     # header:
     #   title: Xây dựng với mã nguồn VIA
     #   hlcolor: "#f6ff00"
