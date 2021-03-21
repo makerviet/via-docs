@@ -1,12 +1,12 @@
 ---
 version: 0
-title: "Ra mắt website tháng 01 - 2021"
+title: "Website launched on January 2021"
 description: "VIA - Vietnam Autonomous là một dự án nguồn mở được khởi xướng bởi MakerHanoi nhằm tạo ra một nền tảng mở về xe tự hành để học sinh, sinh viên và những người đam mê công nghệ và trí tuệ nhân tạo có thể tạo ra chiếc xe tự hành in 3D cho riêng mình, phục vụ mục đích học tập, nghiên cứu."
 date: 2020-01-28T00:10:48+09:00
 draft: false
 ---
 
-Tháng 1 năm 2021, website dự án VIA chính thức được ra mắt tại địa chỉ <https://via.makerviet.org/>.
+On January 2021, VIA offical website was launched at <https://via.makerviet.org/>.
 
 
 <div style="text-align: center">
@@ -14,15 +14,15 @@ Tháng 1 năm 2021, website dự án VIA chính thức được ra mắt tại �
     <h1 style="display: block">VIA - Vietnam Autonomous</h1>
 </div>
 
-**VIA - Vietnam Autonomous** là một dự án nguồn mở được khởi xướng bởi [MakerHanoi](https://www.facebook.com/makerhanoi) nhằm tạo ra một nền tảng mở về xe tự hành để học sinh, sinh viên và những người đam mê công nghệ và trí tuệ nhân tạo có thể tạo ra chiếc xe tự hành in 3D cho riêng mình, phục vụ mục đích học tập, nghiên cứu. Dự án này gồm 4 phần chính:
+**VIA - Vietnam Autonomous**   is an open-source project initiated by [MakerHanoi](https://www.facebook.com/makerhanoi) to create an open platform for autonomous vehicles. We aim to help students, makers, and hobbyists to build their own 3D printed cars as the platforms for studying AI. This project has 4 major part:
 
-- **VIA Bot:** Xe tự hành in 3D nguồn mở. Bao gồm khung xe in 3D, các bo mạch và các thuật toán phát hiện làn đường, biển báo và điều khiển xe. Phần cứng của chiếc xe này được thiết kế tối ưu về chi phí để mọi người đều có thể tiếp cận.
-- **VIA Dataset:** Bộ dữ liệu mở cho xe tự hành. Dựa trên mô hình xe tự hành đã xây dựng, cộng đồng sẽ đóng góp xây dựng các bộ dữ liệu để phát triển xe tự hành. Dữ liệu luôn là một yếu tố quyết định khi phát triển các thuật toán và mô hình trong lĩnh vực trí tuệ nhân tạo AI. Vì thế, bộ dữ liệu này sẽ là một tài nguyên quý giá cho những người mới học AI, đặc biệt trong lĩnh vực xe tự hành.
-- **VIA Community:** Xây dựng các dự án cộng đồng trên nền tảng VIA Bot. VIA Community sẽ tập trung xây dựng các tài liệu, khoá học mở cho người mới bắt đầu có thể tiếp cận và làm quen với các công nghệ về điện tử, lập trình, robotics và trí tuệ nhân tạo.
-- **VIA Simulator:** Bên cạnh module xe in 3D, dự án VIA còn cung cấp một giả lập xe tự hành với tiêu chí nhẹ, nhanh, dễ dàng thiết kế và sử dụng các bản đồ cho xe tự hành. Dựa trên giả lập này, chúng ta sẽ thử nghiệm các thuật toán về nhận dạng đường, biển báo, vật cản và điều khiển xe trước khi đưa lên các mô hình thực tế.
+- **VIA Bot:** Open source self-driving model car. Including 3D printed car shell and chassis, electric board as well as algorithm to help detecting route, traffic sign and control the vehicle. The hadware of this model car was designed for financial optimization so that everyone can access to it.
+- **VIA Dataset:** Open data source for autonomous. Collecting data from each and every prototype, our community will contribute to create many data sets to help developing self-driving car. Data was and will always be the key factor when it comes to developing advanced algorithm and model using for AI. That's why this data source would become a valuable resources for every AI fresher, specially in autonomous field .
+- **VIA Community:** Building community project on VIA Bot platform. VIA Community would also focus on making documents and open courses so that anyone can get access to sudying on technology, programming, robotics and artificial intelligent.
+- **VIA Simulator:** Beside 3D printed module, VIA also provides a autonomous simutalor that focus on low capacity, speed, simple designing to run maps for self-driving cars. By using this simulator, we can experiment with any algorithm before put into practice.
 
 ![VIA Project](/media/via.jpg)
 
-## VIA là một dự án nguồn mở!
+## VIA is an open source project!
 
-Trên góc nhìn là dự án nguồn mở, HanoiMaker rất mong muốn cộng đồng có thể chung tay đóng góp vào dự án này. Đóng góp có thể là các phản biện về định hướng dự án, thiết kế các module thành phần, hoặc trực tiếp tham gia vào viết mã và tài liệu cho các phần của dự án. Mọi chi tiết xin liên hệ [MakerHanoi](https://www.facebook.com/makerhanoi)
+You can help us to build VIA as a module designer, a code writer, a document maker, or even a debaters. We appreciate your every part. For further detail, please contact us at [MakerHanoi](https://www.facebook.com/makerhanoi)
