@@ -1,13 +1,13 @@
 ---
 version: 0
-title: "Chia sẻ dữ liệu và mã nguồn đội Goodgame - Vô địch Cuộc Đua Số 2020"
-description: "VIA - Vietnam Autonomous là một dự án nguồn mở được khởi xướng bởi MakerHanoi nhằm tạo ra một nền tảng mở về xe tự hành để học sinh, sinh viên và những người đam mê công nghệ và trí tuệ nhân tạo có thể tạo ra chiếc xe tự hành in 3D cho riêng mình, phục vụ mục đích học tập, nghiên cứu."
+title: "Publicize data and source code of Goodgame - 2020 Digital Race Championship"
+description: "Vietnam Autonomous is an open-source project initiated by MakerHanoi to create an open platform for autonomous vehicles. We aim to help students, makers, and hobbyists to build their own 3D printed cars as the platforms for studying AI."
 tag: "Tin tức"
 date: 2021-03-13T00:01:00+09:00
 draft: false
 ---
 
-Chúng tôi xin giới thiệu dữ liệu và mã nguồn huấn luyện các mô hình AI của đội **Goodgame**, các bạn trẻ đã vô địch Cuộc đua số năm 2020. Ở cuộc thi này, nhiệm vụ của mỗi đội chơi là huần luyện, tối ưu các mô hình AI, đồng thời tích hợp chúng trên mô hình xe tự lái sử dụng bo mạch Jetson TX2 của NVIDIA nhằm chạy bám theo làn đường quy định, đi theo biển báo chỉ dẫn và tránh các vật cản trên đường. Đội Goodgame, bằng rất nhiều tài năng và nỗ lực đã dành quán quân. Đội trưởng **Goodgame** là Đạt Vũ đã hỗ trợ chia sẻ mã nguồn và các dữ liệu các bạn đã sử dụng để huấn luyện các mô hình AI của mình. Các bạn có thể xem tiếp [tại đây](/docs/datasets/cuoc-dua-so/).
+We are proud to introduce to you the data and sourcecode that was use to train AI model of **Goodgame**, the young champions of 2020 FPT Digital Race. In this competition each team's goal is to train and ultilize their AI model while integrate them onto a self-driving model car using NVIDIA Jetson TX2 NVIDIA board to help it go through the assigned route while following traffic sign's instruction and dodging obstacles . The **Goodgame**, with lots of talent and effort, has won the Championship .  Leader of **Goodgame** - Mr. Đạt Vũ helped us to share the source code and data which they used on their training during the race. More information at [Here](/docs/datasets/cuoc-dua-so/).
 
-![Cuộc Đua Số 2020](cuoc-dua-so.png)
+![Digital Race 2020](cuoc-dua-so.png)
 
