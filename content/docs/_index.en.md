@@ -1,6 +1,6 @@
 ---
-version: 0
-title: Dự án VIA
+version: 1
+title: VIA Project
 ---
 
 <div style="text-align: center">
@@ -8,26 +8,25 @@ title: Dự án VIA
     <h1 style="display: block">VIA - Vietnam Autonomous</h1>
 </div>
 
-**VIA - Vietnam Autonomous** là một dự án nguồn mở được khởi xướng bởi [MakerHanoi](https://www.facebook.com/makerhanoi) nhằm tạo ra một nền tảng mở về xe tự hành để học sinh, sinh viên và những người đam mê công nghệ và trí tuệ nhân tạo có thể tạo ra chiếc xe tự hành in 3D cho riêng mình, phục vụ mục đích học tập, nghiên cứu. Dự án này gồm 4 phần chính:
+**VIA - Vietnam Autonomous**   is an open-source project initiated by [MakerHanoi](https://www.facebook.com/makerhanoi)  to create an open platform for autonomous vehicles. We aim to help students, makers, and hobbyists to build their own 3D printed cars as the platforms for studying AI. This project has four major parts:
 
-- **VIA Bot:** Xe tự hành in 3D nguồn mở. Bao gồm khung xe in 3D, các bo mạch và các thuật toán phát hiện làn đường, biển báo và điều khiển xe. Phần cứng của chiếc xe này được thiết kế tối ưu về chi phí để mọi người đều có thể tiếp cận.
-- **VIA Dataset:** Bộ dữ liệu mở cho xe tự hành. Dựa trên mô hình xe tự hành đã xây dựng, cộng đồng sẽ đóng góp xây dựng các bộ dữ liệu để phát triển xe tự hành. Dữ liệu luôn là một yếu tố quyết định khi phát triển các thuật toán và mô hình trong lĩnh vực trí tuệ nhân tạo AI. Vì thế, bộ dữ liệu này sẽ là một tài nguyên quý giá cho những người mới học AI, đặc biệt trong lĩnh vực xe tự hành.
-- **VIA Community:** Xây dựng các dự án cộng đồng trên nền tảng VIA Bot. VIA Community sẽ tập trung xây dựng các tài liệu, khoá học mở cho người mới bắt đầu có thể tiếp cận và làm quen với các công nghệ về điện tử, lập trình, robotics và trí tuệ nhân tạo.
-- **VIA Simulator:** Bên cạnh module xe in 3D, dự án VIA còn cung cấp một giả lập xe tự hành với tiêu chí nhẹ, nhanh, dễ dàng thiết kế và sử dụng các bản đồ cho xe tự hành. Dựa trên giả lập này, chúng ta sẽ thử nghiệm các thuật toán về nhận dạng đường, biển báo, vật cản và điều khiển xe trước khi đưa lên các mô hình thực tế.
+- **VIA Bot:** Open source self-driving model car, including 3D printed car chassis, PCB boards as well as the algorithms for lane line detection, traffic sign detection, and vehicle control. The hardware of this model car was designed for financial optimization so that everyone can access it.
+- **VIA Dataset:** Open datasets for self-driving development. By collecting data from prototypes, our community will contribute to creating many datasets for developing self-driving cars. Data was and will always be a key factor when it comes to AI model development. That’s why this data source would become a valuable resource for every AI fresher, especially in the autonomous field.
+- **VIA Community:** Building community project on VIA Bot platform. VIA Community would also focus on making documents and open courses so that anyone can get access to studying technology, programming, robotics, and artificial intelligence.
+- **VIA Simulator:** Besides the 3D printed physical car, VIA also provides a self-driving simulator that focuses on lightweight and ease of use. By using this simulator, we can experiment with any algorithm before put into practice.
 
 ![VIA Project](/media/via.jpg)
 
-## VIA là một dự án nguồn mở!
+## VIA is an open source project!
 
-Trên góc nhìn là dự án nguồn mở, HanoiMaker rất mong muốn cộng đồng có thể chung tay đóng góp vào dự án này. Đóng góp có thể là các phản biện về định hướng dự án, thiết kế các module thành phần, hoặc trực tiếp tham gia vào viết mã và tài liệu cho các phần của dự án. Mọi chi tiết xin liên hệ [MakerHanoi](https://www.facebook.com/makerhanoi) với thông tin bên dưới.
-
-## Liên hệ
+From an open source project perspective, HanoiMaker wants the community to join hands to contribute to this project. Contribution can be project-oriented criticism, design of component modules, or directly involved in the coding and documentation of parts of the project. For more information, please contact [MakerHanoi](https://www.facebook.com/makerhanoi) with the information below.
+## Contact
 
 **MakerHanoi**
 
 - **Website:** <http://makerviet.org/>.
 - **FB Fanpage:** <https://www.facebook.com/makerhanoi>.
 - **Email:** makerhanoi@gmail.com.
-- **Địa chỉ:** Số 2 Dương Khuê, Mai Dịch, Cầu Giấy, Hà Nội.
-- **Điện thoại:** +84 904371185 hoặc +84 858899789.
+- **Address:** No 2 Duong Khue, Mai Dich, Cau Giay, Hanoi.
+- **Phone:** +84 904371185 hoặc +84 858899789.
 
