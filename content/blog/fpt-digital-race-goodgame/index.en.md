@@ -7,7 +7,7 @@ date: 2021-03-13T00:01:00+09:00
 draft: false
 ---
 
-We are proud to introduce to you the data and source code that was used to train the AI models of **Goodgame** team, the young champions of the 2020 FPT Digital Race. In this competition, each team's goal is to train and utilize their AI model while integrating them onto a self-driving model car using NVIDIA Jetson TX2 NVIDIA board to help it go through the assigned route while following traffic signs and dodging obstacles. The **Goodgame**, with lots of talent and effort, has won the Championship.  Leader of **Goodgame** - Mr. Đạt Vũ helped us to share the source code and data which they used on their training during the race. More information at [Here](/docs/datasets/cuoc-dua-so/).
+We are proud to introduce to you the data and source code that was used to train the AI models of **Goodgame** team, the young champions of the 2020 FPT Digital Race. In this competition, each team's goal is to train and utilize their AI model while integrating them onto a self-driving model car using NVIDIA Jetson TX2 NVIDIA board to help it go through the assigned route while following traffic signs and dodging obstacles. The **Goodgame**, with lots of talent and effort, has won the Championship.  Leader of **Goodgame** - Mr. Đạt Vũ helped us to share the source code and data which they used on their training during the race. More information at [Here](/en/docs/datasets/cuoc-dua-so/).
 
 ![Digital Race 2020](cuoc-dua-so.png)
 
