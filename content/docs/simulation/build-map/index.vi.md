@@ -71,7 +71,7 @@ Click chuột trở lại cửa sổ của trình giả lập, xe sẽ tự đ�
 
 **VIA Visualizer** sẽ giúp chúng ta thực hiện điều trên. Sau khi chạy file `drive.py`, mở trình duyệt web và nhập địa chỉ sau:
 
-![http://localhost:4567](http://localhost:4567)
+[http://localhost:4567](http://localhost:4567)
 
 Chúng ta sẽ thấy hình ảnh từ giả lập đã qua thuật toán xử lí được hiển thị theo thời gian thực ngay trên trình duyệt.
 ![](mkKweCp.png)
