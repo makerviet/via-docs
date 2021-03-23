@@ -1,6 +1,6 @@
 ---
 version: 1
-title: "Các lưu ý khi soạn tài liệu cho VIA:"
+title: "Các lưu ý khi soạn tài liệu cho VIA"
 date: 2020-03-22T00:10:48+09:00
 draft: false
 ---
