@@ -39,4 +39,5 @@ draft: false
 #### 2. Các hướng dẫn về tài liệu và mã nguồn
 
 - Các nhóm quản lý task tại các Github Project ứng với nhóm mình. Link phía trên.
+- Mã nguồn và tài liệu các dự án: <https://via.makerviet.org/vi/docs/resources/source-code-and-data/>.
 - Các lưu ý khi soạn tài liệu cho VIA: [/vi/doc-styles/](/vi/doc-styles/).
