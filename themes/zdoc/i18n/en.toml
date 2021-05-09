@@ -21,3 +21,9 @@ other = "WRITTEN BY"
 
 [edit-this-page]
 other = "EDIT THIS PAGE"
+
+[ai-models]
+other = "AI Models"
+
+[ai-models-sub]
+other = "Pretrained models and AI algorithms by VIA Team and community"

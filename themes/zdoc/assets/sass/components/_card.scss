@@ -1,0 +1,397 @@
+.post-feed {
+
+
+    position: relative;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    padding: 2rem 0 0;
+
+
+    .button {
+        background-color: #006094;
+        color: #fff;
+        display: inline-flex;
+        padding: .5rem 1rem;
+        text-transform: uppercase;
+        border: 1px solid #006094;
+        border-radius: .5rem;
+        font-size: .9rem;
+        align-items: center;
+        user-select: none;
+    }
+
+    .button:hover,
+    .button:focus {
+        background-color: #001e2e;
+        color: #fff;
+        border: 1px solid #001e2e;
+    }
+
+    .button_translucent {
+        background-color: rgba(0, 96, 148, .15);
+        color: #006094;
+        border: 1px solid transparent;
+    }
+
+    .post_tag {
+        padding: .2rem .8rem;
+        font-size: .8rem;
+    }
+
+    .post_tag {
+        margin: .5rem;
+    }
+
+    .post_meta {
+        display: inline-flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+
+    .post_meta .button {
+        margin-bottom: 0;
+    }
+
+    .author-list-item {
+        color: #333;
+    }
+
+    .author-list-item,
+    .post-card-image-link,
+
+
+    .reading-time {
+        font-size: .8rem;
+        font-weight: 500;
+    }
+
+
+    .post_tag {
+        margin-left: 0;
+    }
+
+
+
+    .post-card {
+        color: #555;
+        font-size: 1rem;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 20rem;
+        flex: 1 1 20rem;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        overflow: hidden;
+        margin: 0 .5rem 2rem;
+        min-height: 20rem;
+        background: rgba(255, 255, 255, .6);
+        background-size: cover;
+        border-radius: 5px;
+        -webkit-box-shadow: rgba(39, 44, 49, .06)8px 14px 38px, rgba(39, 44, 49, .03)1px 3px 8px;
+        box-shadow: 8px 14px 38px rgba(39, 44, 49, .06), 1px 3px 8px rgba(39, 44, 49, .03);
+        -webkit-transition: scale .5s ease, translate3D .5s ease;
+        transition: scale .5s ease, translate3D .5s ease;
+    }
+
+    .post-card:hover {
+        -webkit-box-shadow: rgba(39, 44, 49, .07)8px 28px 50px, rgba(39, 44, 49, .04)1px 6px 12px;
+        box-shadow: 8px 28px 50px rgba(39, 44, 49, .07), 1px 6px 12px rgba(39, 44, 49, .04);
+        -webkit-transition: scale .5s ease, translate3D .5s ease;
+        transition: scale .5s ease, translate3D .5s ease;
+        -webkit-transform: translate3D(0, -1px, 0)scale(1.02);
+    }
+
+    .post-card-image-link {
+        display: block;
+        overflow: hidden;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .post-card-image {
+        width: 100%;
+        height: 200px;
+        background: 50% no-repeat #c5d2d9;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    .post-card-content-link {
+        position: relative;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        display: block;
+        padding: .5rem 1.5rem 0;
+        color: #15171a;
+    }
+
+    .post-card-title {
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-top: 0;
+        margin-bottom: .2rem;
+        text-transform: uppercase;
+    }
+
+    .post-card-content {
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .post-card-meta {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+        padding: 0 25px 25px;
+    }
+
+    .author-list-item {
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .author-list-item:first-child {
+        z-index: 10;
+    }
+
+    .reading-time {
+        color: #738a94;
+        text-transform: uppercase;
+    }
+
+    .reading-time {
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        margin-left: 20px;
+        line-height: 33px;
+        letter-spacing: .5px;
+    }
+
+    @media (max-width:650px) {
+
+        .post-card {
+            margin: 0 20px 5vw;
+        }
+    }
+
+    [data-aos^=fade][data-aos^=fade] {
+        opacity: 0;
+        transition-property: opacity, transform;
+    }
+
+    .aos-animate[data-aos^=fade][data-aos^=fade] {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+
+    [data-aos=fade-up] {
+        transform: translate3d(0, 100px, 0);
+    }
+
+    .post-card-excerpt {
+        font-family: Verdana, Arial, sans-serif;
+    }
+
+    .center {
+        align-items: center;
+    }
+
+    a:active,
+    a:link,
+    a:visited,
+    footer a:hover {
+        text-decoration: none;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-bottom: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .footer-color {
+        color: var(--darkgrey);
+    }
+
+    .hover-effect {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+
+    .hover-effect:hover {
+        opacity: .8;
+    }
+
+    .reading-time {
+        margin-top: 5px;
+    }
+
+    .post-card:hover {
+        transform: translate3D(0, -1px, 0)scale(1.02) !important;
+    }
+
+    article:hover .share {
+        opacity: 1;
+    }
+
+    article .share {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        opacity: 0;
+    }
+
+    .post-card:hover .share {
+        -webkit-transition: opacity .3s ease-in-out;
+        -moz-transition: opacity .3s ease-in-out;
+        -o-transition: opacity .3s ease-in-out;
+        transition: opacity .3s ease-in-out;
+    }
+
+    .share {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .share .twitter {
+        background: #1da1f2;
+    }
+
+    .share .facebook {
+        background: #3b5998;
+    }
+
+    .share .email {
+        background: #fff;
+    }
+
+    .share a:hover {
+        filter: brightness(1.1);
+    }
+
+    .share a {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        color: #fff;
+        border-radius: 5px;
+        margin-bottom: 3px;
+        background: #52565e;
+    }
+
+    .card-link {
+        color: #15171a;
+    }
+
+    a.footer-color:hover {
+        color: var(--blue);
+    }
+
+    .gradient-effect a:hover {
+        background-size: 100% 2px;
+    }
+
+    .gradient-effect a {
+        padding-bottom: 5px;
+        background: -webkit-gradient(linear, left top, right top, from(#7169FE), to(#41e3e4));
+        background: -webkit-linear-gradient(left, #7169FE, #41e3e4);
+        background: -o-linear-gradient(left, #7169FE, #41e3e4);
+        background: linear-gradient(to right, #7169FE, #41e3e4);
+        background-size: 0 2px;
+        background-repeat: no-repeat;
+        background-position: 0 87%;
+        -webkit-transition: background .6s ease;
+        -moz-transition: background .6s ease;
+        -ms-transition: background .6s ease;
+        -o-transition: background .6s ease;
+        transition: background .6s ease;
+    }
+
+    .post-card-meta {
+        border-top: 2px solid rgba(240, 240, 240, .6);
+        padding-top: 13px !important;
+    }
+
+    .post-card-image:active,
+    .post-card-image:focus,
+    .post-card-image:hover {
+        -webkit-transform: scale(1.1)rotate(1deg);
+        -ms-transform: scale(1.1)rotate(1deg);
+        transform: scale(1.1)rotate(1deg);
+    }
+
+    .post-card-excerpt {
+        max-width: 56em;
+        color: #555;
+    }
+
+    .post-card {
+        border: 1px solid #ddd;
+    }
+
+    .post-card:hover {
+        border-color: #3eb0ef !important;
+        text-decoration: none;
+    }
+
+    .footer-color {
+        display: inline-flex;
+        align-items: flex-end;
+    }
+
+    @media (min-width:500px) {
+        .post-card-title {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.post-card,
+.post-feed {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@media (max-width:650px) {
+    .post-feed {
+        padding-top: 5vw;
+    }
+
+    .post-card {
+        margin: 0 20px 5vw;
+    }
+}

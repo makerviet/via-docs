@@ -6,10 +6,10 @@
   {{ range $index, $element := .Site.Taxonomies.tags }}
     {{ if $index }}
       <a href="{{ $element.Page.RelPermalink }}" class="tag">
-        <span class="tag__text" style="font-size: {{ add 0.8 (div (len $element) (mul 1.0 $totalTag)) }}rem;">
+        <span class="tag__text">
           {{ $element.Page.Title }}
         </span>
-        <span class="tag__num" style="font-size: {{ add 0.8 (div (len $element) (mul 1.0 $totalTag)) }}rem;" dir="auto">
+        <span class="tag__num" style="font-size: 1.2rem;" dir="auto">
           ({{ printf "%#v" (len $element) }})
         </span>
       </a>

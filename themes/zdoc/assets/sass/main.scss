@@ -53,6 +53,7 @@ $light-nav-icon-color: {{ .Site.Data.color.light_nav_icon_color }};
 @import 'components/codetab';
 @import 'components/box';
 @import 'components/featuredImage';
+@import 'components/card';
 
 @import 'layout/grid';
 @import 'layout/footer';

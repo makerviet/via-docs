@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div class="top" style="margin-bottom: 2rem;">
+  <header class="header__wrapper bgcolor__header">
+    <div class="divider">
+      <div class="lmr">
+        <h2 class="title" style="margin-bottom: 0.5rem;">{{ i18n "ai-models" }}</h2>
+        <p style="margin-left: 1.6rem; margin-bottom: 2rem;">{{ i18n "ai-models-sub" }}</p>
+      </div>
+    </div>
+  </header>
+</div>
+
+
+<div class="mid blog__bg">
+  <main class="main blog__bg">
+    <div class="sv">
+      <div class="post-feed">
+        {{ $paginator := .Paginate (where .RegularPages "Type" .Type) }}
+        {{ range $paginator.Pages }}
+          {{ .Render "summary-model" }}
+        {{ end }}
+        {{ partial "main/component/pagination.html" . }}
+      </div>
+      <div class="blog-tags">
+        {{ partial "main/component/tag-cloud" . }}
+      </div>
+    </div>
+  </main>
+</div>
+
+<style>
+  .sv {
+    grid-template-columns: minmax(630px,1200px) minmax(125px,325px);
+  }
+</style>
+
+{{ end }}

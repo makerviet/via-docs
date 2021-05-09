@@ -2,6 +2,7 @@
 version: 1
 title: "[Nâng cao] Huấn luyện mạng phát hiện vạch kẻ đường với PiNet"
 weight: 50
+draft: true
 ---
 
 [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Bn-9WOgkQuYMX0fIYu5ChkAQPQyHqhEo)
