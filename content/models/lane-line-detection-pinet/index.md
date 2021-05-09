@@ -1,24 +1,101 @@
 ---
-
 title: "Phát hiện vạch kẻ đường - PiNet"
 description: "Phát hiện vạch kẻ đường là bài toán rất quan trọng khi xây dựng xe tự hành. Mô hình phát hiện vạch kẻ đường dựa trên PiNet cho tốc độ cao và độ chính xác tương đối tốt cho các ứng dụng xe tự hành của VIA."
 image: pinet.png
 tags: ["Lane line"]
 date: 2021-05-05
 author: "Huỳnh Đức"
+authorUrl: "https://github.com/ducnguyenhuynh/"
+sourceCodeUrl: "https://github.com/ducnguyenhuynh/via-line-detection"
+notebookUrl: "https://colab.research.google.com/drive/1Bn-9WOgkQuYMX0fIYu5ChkAQPQyHqhEo"
+accuracy: "0.xx mAP"
+fps: "xx FPS on NVIDIA RTX 2070"
+version: "1.0"
 ---
-[![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Bn-9WOgkQuYMX0fIYu5ChkAQPQyHqhEo)
 
-Phát hiện vạch kẻ đường là bài toán rất quan trọng khi xây dựng xe tự hành. Có nhiều cách để máy tính có thể phát hiện làn đường từ một tấm hình. Cách cơ bản nhất ta có thể sử dụng các thuật toán xử lý ảnh để phát hiện vạch kẻ đường thông qua màu sắc hay các thuật toán phát hiện cạnh như Canny. Cao siêu hơn ta có thể sử dụng các mô hình máy học để phân đoạn hay phát hiện vạch kẻ. Trên quan điểm cá nhân, việc sử dụng mô hình phát hiện vạch kẻ sẽ giúp tiết kiệm nhiều các chi phí tính toán trong việc xử lý các bài toán con và cũng sẽ giúp tiết kiệm thời gian xử lý bởi các mô hình vậy thường khá nhẹ. Trong giới hạn của tutorial này, chũng ta hãy cùng tìm hiểu các vận hành mạng PINet để phát hiện vạch kẻ đương.
 
-**Mô hình mạng PINet:**
+## I. Thông tin mô hình
 
-![Pinet.png](pinet.png)
+### 1. Giới thiệu
 
-## 1. Huấn luyện mô hình **PINet** 
+Phát hiện vạch kẻ đường là bài toán rất quan trọng khi xây dựng xe tự hành. Có nhiều cách để máy tính có thể phát hiện làn đường từ một tấm hình. Cách cơ bản nhất ta có thể sử dụng các thuật toán xử lý ảnh để phát hiện vạch kẻ đường thông qua màu sắc hay các thuật toán phát hiện cạnh như Canny. Cao siêu hơn ta có thể sử dụng các mô hình máy học để phân đoạn hay phát hiện vạch kẻ. Mô hình được giới thiệu ở đây được xây dựng dựa trên kiến trúc **PiNet**.
 
-### 1.1 Tải mã nguồn từ Github 
+**Input:** Đầu vào của mô hình
 
+**Output:** Đầu ra của mô hình là gì?
+
+TODO: Mô hình này tập trung vào tốc độ hay độ chính xác? Dựa trên thiết kế nào? Được huấn luyện trên bộ dữ liệu nào, gồm bao nhiêu ảnh - nói sơ qua.
+
+![Mô hình mạng PINet](pinet.png)
+
+**Paper:** [Key Points Estimation and Point Instance Segmentation Approach for Lane Detection Edit social preview. Yeongmin Ko • Younkwan Lee • Shoaib Azam • Farzeen Munir • Moongu Jeon • Witold Pedrycz](https://arxiv.org/abs/2002.06604).
+
+### 2. Kết quả
+
+**Demo:** TODO: Phần demo này nên có video hoặc hình động để thể hiện kết quả của mô hình.
+
+![Phát hiện vạch kẻ đường với PINet](https://github.com/ducnguyenhuynh/via-line-detection/raw/main/images/result_demo.gif)
+
+**Độ đo:** TODO: Metric được sử dụng là gì ? tính toán ra sao?
+
+**Bộ dữ liệu kiểm tra:** TODO: Test set sử dụng là ở đâu? Chỉ rõ số lượng mẫu, phân bố mẫu.
+
+**Độ chính xác và Tốc độ:** Độ chính xác mô hình là bao nhiêu? Tốc độ đạt được là bao nhiêu FPS? Có thể lập bảng nếu có nhiều kết quả độ chính xác ứng với các FPS khác nhau.
+
+### 3. Hạn chế và hướng cải tiến
+
+**Hạn chế:**
+
+- Hạn chế của mô hình là gì ? Mất cân bằng dữ liệu? Tốc độ thấp? Độ chính xác chưa cao?
+
+**Hướng cải tiến:**
+- Hướng cải thiện của mô hình trong tương lai...
+- Các ứng dụng khác của mô hình.
+
+## II. Chạy thử và tích hợp mô hình
+
+### 1. Chạy mô hình đã huấn luyện trên ảnh
+
+```
+```
+
+**Kết quả:**
+
+TODO
+
+### 2. Chạy mô hình đã huấn luyện trên video
+
+```
+```
+
+**Kết quả:**
+
+TODO
+
+### 3. Tích hợp lên hệ thống VIA SDK
+
+```
+```
+
+**Kết quả:**
+
+TODO
+
+
+## II. Huấn luyện mô hình
+
+Hướng dẫn sau sẽ hướng dẫn các bạn chuẩn bị dữ liệu, và huấn luyện mô hình PINet cho phát hiện vạch kẻ đường. Các bạn cũng có thể chỉnh sửa mã nguồn và thay đổi bộ dữ liệu sử dụng để sử dụng mô hình này cho các mục đích khác nhau.
+
+### 1. Thông tin dữ liệu
+
+Chuẩn bị dữ liệu và một việc quan trọng và chiếm khá nhiều thời gian trong xây dựng một hệ thống học máy.
+
+- Bộ dữ liệu được lấy ở đâu?
+- Phân chia ra sao? (train/val/test)
+- Các đặc điểm bộ dữ liệu này.
+### 2. Tải mã nguồn
+
+TODO: Thêm một số hướng dẫn
 
 ```python
 !git clone https://github.com/ducnguyenhuynh/via-line-detection.git
@@ -33,7 +110,9 @@ Phát hiện vạch kẻ đường là bài toán rất quan trọng khi xây d�
     Resolving deltas: 100% (57/57), done.
 
 
-### 1.2 Tải dữ liệu, cài đặt thư viện
+### 3. Tải và phân chia dữ liệu
+
+TODO: Thêm một số hướng dẫn
 
 ```python
 cd via-line-detection/
@@ -47,9 +126,9 @@ cd via-line-detection/
 !pip install -r requirements.txt
 ```
 
+### 4 Huấn luyện mô hình PINet
 
-### 1.3 Huấn luyện mô hình PINet
-
+TODO: Thêm một số lưu ý, giải thích tại sao cần làm như vậy. Việc huấn luyện mô hình nên đơn giản, chạy ít file, sử dụng các file cấu hình .py hoặc .json để nạp cấu hình huấn luyện.
 
 ```python
 cd src
@@ -57,12 +136,9 @@ cd src
 
     /content/via-line-detection/src
 
-
-
 ```python
  %pycat parameters.py
 ```
-
 
 ```python
 %%writefile parameters.py
@@ -720,147 +796,6 @@ Giờ thì train thôi :))))
 !python train.py
 ```
 
-# 2. Đánh giá
+TODO: Visualize quá trình huấn luyện mô hình
 
-
-```python
-
-```
-
-# 3. Demo
-
-#Thay đổi một số đường dẫn trong các file py:
-- util_hourglass.py: uncomment line 9, comment line 8
-- hourglass_network.py: uncomment line 9, comment line 8
-- processing_image.py: uncomment line 4, comment line 5
-- util.py: uncomment line 10, comment line 9
-
-```python
-cd ..
-```
-
-```python
-%pycat demo_line_detection.py
-```
-
-
-```python
-%%writefile demo_line_detection.py
-import cv2
-import torch 
-import time
-import argparse
-import numpy as np
-
-from src import util
-from net import Net
-from src.parameters import Parameters
-from src.processing_image import warp_image
-
-if __name__ == "__main__":
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-o','--option', type=str, default='image', help="demo line detection on 'image' or 'video', default 'image' ", required=True)
-    parser.add_argument('-d','--direction', type=str, default="", help='direction of demo video')
-    parser.add_argument('-s','--save_video', type=bool, default=False)
-    args = vars(parser.parse_args())
-    
-    net = Net()
-    p = Parameters()
-    # load model epoch 34 with total loss is 0.7828
-    net.load_model(1,0.8777)
-
-    # read image from folder images test
-    if args['option'] == 'image':
-        print(args['direction'])
-        image = cv2.imread(args['direction'])
-        image_resized = cv2.resize(image,(512,256))
-        # cv2.imshow("image",image_resized)
-        #x , y are position of points in lines 
-        #because previous image is warped -> warp = False
-        x , y = net.predict(image_resized, warp = False)
-        print(x, y)
-        image_points_result = net.get_image_points()
-        # cv2.imshow("points", image_points_result)
-        cv2.imwrite("result.png",image_points_result)
-        # cv2.waitKey()
-    if args['option'] == 'video':
-        cap = cv2.VideoCapture(args['direction'])
-        if args['save_video']:
-            fourcc = cv2.VideoWriter_fourcc(*'XVID')
-            out = cv2.VideoWriter('result-point.avi', fourcc, 30, (512,256))
-        while cap.isOpened():
-            prevTime = time.time()
-            ret, image = cap.read()
-            t_image = cv2.resize(image,(512,256))
-            x , y = net.predict(t_image)
-            # fits = np.array([np.polyfit(_y, _x, 1) for _x, _y in zip(x, y)])
-            # fits = util.adjust_fits(fits)
-            image_points = net.get_image_points()
-            # mask = net.get_mask_lane(fits)
-            cur_time = time.time()
-            fps = 1/(cur_time - prevTime)
-            s = "FPS : "+ str(fps)
-            # image_lane = net.get_image_lane()
-            cv2.putText(image_points, s, (0, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0))
-            # cv2.imshow("image",image_points)
-            if args['save_video']:
-              out.write(image_points)
-            key = cv2.waitKey(1)
-            if not ret or key == ord('q'):
-                break
-        out.release()
-
-```
-
-    Overwriting demo_line_detection.py
-
-
-### 3.1 Demo trên ảnh
-
-
-```python
-!python demo_line_detection.py -o image -d "images_test/2lines-00001086.jpg"
-```
-
-    images_test/2lines-00001086.jpg
-    [[164, 170, 155, 139, 145, 124, 130, 108, 115, 92, 99, 76, 83, 60, 67, 44, 51, 28, 35, 12, 19, 3, 9], [317, 323, 332, 338, 347, 356, 362, 365, 371, 380, 385, 389, 395, 403, 409, 413, 419, 427, 433, 437, 442, 451, 457, 461, 466, 475, 484, 490, 499, 507]] [[6, 3, 11, 20, 17, 29, 25, 37, 34, 45, 42, 53, 50, 61, 58, 69, 66, 77, 74, 86, 83, 92, 89], [17, 20, 26, 30, 36, 42, 46, 49, 52, 58, 62, 65, 68, 74, 78, 81, 84, 90, 94, 97, 101, 106, 110, 113, 117, 123, 129, 133, 140, 146]]
-
-
-### 3.2 Demo trên video
-
-Tải video
-
-
-```python
-!mkdir video
-!wget https://github.com/ducnguyenhuynh/via-line-detection/releases/download/v1.0/demo.avi -O video/demo.avi
-```
-
-    --2021-04-19 14:40:52--  https://github.com/ducnguyenhuynh/via-line-detection/releases/download/v1.0/demo.avi
-    Resolving github.com (github.com)... 192.30.255.112
-    Connecting to github.com (github.com)|192.30.255.112|:443... connected.
-    HTTP request sent, awaiting response... 302 Found
-    Location: https://github-releases.githubusercontent.com/354692123/ae188000-a157-11eb-8cb8-460239f853a9?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210419T144052Z&X-Amz-Expires=300&X-Amz-Signature=9eaec88e116e1c0886a6949db168f1ec76d2495d55a227ca6a383fbbf5b95c8e&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=354692123&response-content-disposition=attachment%3B%20filename%3Ddemo.avi&response-content-type=application%2Foctet-stream [following]
-    --2021-04-19 14:40:52--  https://github-releases.githubusercontent.com/354692123/ae188000-a157-11eb-8cb8-460239f853a9?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210419T144052Z&X-Amz-Expires=300&X-Amz-Signature=9eaec88e116e1c0886a6949db168f1ec76d2495d55a227ca6a383fbbf5b95c8e&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=354692123&response-content-disposition=attachment%3B%20filename%3Ddemo.avi&response-content-type=application%2Foctet-stream
-    Resolving github-releases.githubusercontent.com (github-releases.githubusercontent.com)... 185.199.110.154, 185.199.109.154, 185.199.111.154, ...
-    Connecting to github-releases.githubusercontent.com (github-releases.githubusercontent.com)|185.199.110.154|:443... connected.
-    HTTP request sent, awaiting response... 200 OK
-    Length: 39065134 (37M) [application/octet-stream]
-    Saving to: ‘video/demo.avi’
-    
-    video/demo.avi      100%[===================>]  37.25M  51.5MB/s    in 0.7s    
-    
-    2021-04-19 14:40:53 (51.5 MB/s) - ‘video/demo.avi’ saved [39065134/39065134]
-
-
-```python
-!python demo_line_detection.py -o video -d "video/demo.avi" -s 1
-```
-
-    [0;36m[mpeg4 @ 0x560cf9916000] [0m[1;31mac-tex damaged at 17 1
-    [0m[0;36m[mpeg4 @ 0x560cf9916000] [0m[1;31mError at MB: 38
-    [0mTraceback (most recent call last):
-      File "demo_line_detection.py", line 47, in <module>
-        t_image = cv2.resize(image,(512,256))
-    cv2.error: OpenCV(4.5.1) /tmp/pip-req-build-7m_g9lbm/opencv/modules/imgproc/src/resize.cpp:4051: error: (-215:Assertion failed) !ssize.empty() in function 'resize'
+TODO: Sau khi huần luyện, tải mô hình về ra sao?

@@ -2,14 +2,38 @@
 {{ $wideViewAsDefault := ($.Param "wideViewAsDefault") }}
 <div class="mid">
   <div class="divider">
-    
+<!--     
     <nav id="single-menu" class="{{ if $wideViewAsDefault }}hide{{ else }}l{{ end }}" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
-    </nav>
+    </nav> -->
 
-    <article id="list-main" class="{{ if $wideViewAsDefault }}lm{{ else }}m{{ end }}" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
+    <article id="list-main" class="lm" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
       {{ if $.Param "enableBlogBreadcrumb" }}
         {{ partial "main/component/breadcrumb.html" . }}
       {{ end }}
+
+      <div class="model-card-header">
+        <img style="width: 20rem; float: right" src="{{ .Params.image }}">
+        <h2 class="title">{{ .Title }}</h2>
+        <ul style="margin-bottom: 0.5rem; list-style: initial; margin-left: 1rem">
+          {{ if .Params.version }} <li><b>Phiên bản: </b> {{ .Params.version }}</li> {{ end }}
+          {{ if .Params.author }}
+            <li><b>Tác giả: </b> 
+            {{ if .Params.authorUrl }} <a href="{{ .Params.authorUrl }}"> {{ end }}
+            {{ .Params.author }}
+            {{ if .Params.authorUrl }} </a> {{ end }}
+            </li> 
+          {{ end }}
+        
+          {{ if .Params.sourceCodeUrl }} <li><b>Mã nguồn: </b>  <a href="{{ .Params.sourceCodeUrl }}">{{ .Params.sourceCodeUrl }}</a></li> {{ end }}
+          {{ if .Params.notebookUrl }} <li><b>Notebook: </b>  <a href="{{ .Params.notebookUrl }}">{{ .Params.notebookUrl }}</a></li> {{ end }}
+
+          {{ if .Params.accuracy }} <li><b>Độ chính xác: </b> {{ .Params.accuracy }}</li> {{ end }}
+          {{ if .Params.fps }} <li><b>Tốc độ: </b> {{ .Params.fps }}</li> {{ end }}
+        </ul>
+        
+        {{ if .Params.notebookUrl }} <a href="{{ .Params.notebookUrl }}"><img src="https://colab.research.google.com/assets/colab-badge.svg"></a> {{ end }}
+      </div>
+      
       {{ partial "main/sections/list-main.html" . }}
       {{ partial "main/component/pagination-single.html" . }}
     </article>

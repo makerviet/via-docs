@@ -1,0 +1,124 @@
+---
+title: "Phát hiện vạch kẻ đường - PiNet"
+description: "Phát hiện vạch kẻ đường là bài toán rất quan trọng khi xây dựng xe tự hành. Mô hình phát hiện vạch kẻ đường dựa trên PiNet cho tốc độ cao và độ chính xác tương đối tốt cho các ứng dụng xe tự hành của VIA."
+image: pinet.png
+tags: ["Lane line"]
+date: 2021-05-05
+author: "Huỳnh Đức"
+authorUrl: "https://github.com/ducnguyenhuynh/"
+sourceCodeUrl: "https://github.com/ducnguyenhuynh/via-line-detection"
+notebookUrl: "https://colab.research.google.com/drive/1Bn-9WOgkQuYMX0fIYu5ChkAQPQyHqhEo"
+accuracy: "0.xx mAP"
+fps: "xx FPS on NVIDIA RTX 2070"
+version: "1.0"
+---
+
+
+## I. Thông tin mô hình
+
+### 1. Giới thiệu
+
+Phát hiện vạch kẻ đường là bài toán rất quan trọng khi xây dựng xe tự hành. Có nhiều cách để máy tính có thể phát hiện làn đường từ một tấm hình. Cách cơ bản nhất ta có thể sử dụng các thuật toán xử lý ảnh để phát hiện vạch kẻ đường thông qua màu sắc hay các thuật toán phát hiện cạnh như Canny. Cao siêu hơn ta có thể sử dụng các mô hình máy học để phân đoạn hay phát hiện vạch kẻ. Mô hình được giới thiệu ở đây được xây dựng dựa trên kiến trúc **PiNet**.
+
+**Input:** Đầu vào của mô hình
+
+**Output:** Đầu ra của mô hình là gì?
+
+TODO: Mô hình này tập trung vào tốc độ hay độ chính xác? Dựa trên thiết kế nào? Được huấn luyện trên bộ dữ liệu nào, gồm bao nhiêu ảnh - nói sơ qua.
+
+
+![Mô hình mạng PINet](pinet.png)
+
+**Paper:** [Key Points Estimation and Point Instance Segmentation Approach for Lane Detection Edit social preview. Yeongmin Ko • Younkwan Lee • Shoaib Azam • Farzeen Munir • Moongu Jeon • Witold Pedrycz](https://arxiv.org/abs/2002.06604).
+
+### 2. Kết quả
+
+**Demo:** TODO: Phần demo này nên có video hoặc hình động để thể hiện kết quả của mô hình.
+
+![Phát hiện vạch kẻ đường với PINet](https://github.com/ducnguyenhuynh/via-line-detection/raw/main/images/result_demo.gif)
+
+**Độ đo:** TODO: Metric được sử dụng là gì ? tính toán ra sao?
+
+**Bộ dữ liệu kiểm tra:** TODO: Test set sử dụng là ở đâu? Chỉ rõ số lượng mẫu, phân bố mẫu.
+
+**Độ chính xác và Tốc độ:** Độ chính xác mô hình là bao nhiêu? Tốc độ đạt được là bao nhiêu FPS? Có thể lập bảng nếu có nhiều kết quả độ chính xác ứng với các FPS khác nhau.
+
+### 3. Hạn chế và hướng cải tiến
+
+**Hạn chế:**
+
+- Hạn chế của mô hình là gì ? Mất cân bằng dữ liệu? Tốc độ thấp? Độ chính xác chưa cao?
+
+**Hướng cải tiến:**
+- Hướng cải thiện của mô hình trong tương lai...
+- Các ứng dụng khác của mô hình.
+
+## II. Chạy thử và tích hợp mô hình
+
+### 1. Chạy mô hình đã huấn luyện trên ảnh
+
+```
+```
+
+**Kết quả:**
+
+TODO
+
+### 2. Chạy mô hình đã huấn luyện trên video
+
+```
+```
+
+**Kết quả:**
+
+TODO
+
+### 3. Tích hợp lên hệ thống VIA SDK
+
+```
+```
+
+**Kết quả:**
+
+TODO
+
+
+## II. Huấn luyện mô hình
+
+Hướng dẫn sau sẽ hướng dẫn các bạn chuẩn bị dữ liệu, và huấn luyện mô hình PINet cho phát hiện vạch kẻ đường. Các bạn cũng có thể chỉnh sửa mã nguồn và thay đổi bộ dữ liệu sử dụng để sử dụng mô hình này cho các mục đích khác nhau.
+
+### 1. Thông tin dữ liệu
+
+Chuẩn bị dữ liệu và một việc quan trọng và chiếm khá nhiều thời gian trong xây dựng một hệ thống học máy.
+
+- Bộ dữ liệu được lấy ở đâu?
+- Phân chia ra sao? (train/val/test)
+- Các đặc điểm bộ dữ liệu này.
+
+### 2. Tải mã nguồn
+
+TODO: Thêm một số hướng dẫn
+
+### 3. Tải và phân chia dữ liệu
+
+TODO: Thêm một số hướng dẫn
+
+```python
+cd via-line-detection/
+```
+
+```python
+!wget https://github.com/ducnguyenhuynh/via-line-detection/releases/download/v1.0/via-data-line-detection.zip -O ./dataset.zip
+!unzip dataset.zip
+!mv via-data-line-detection/ dataset
+!rm dataset.zip
+!pip install -r requirements.txt
+```
+
+### 4 Huấn luyện mô hình PINet
+
+TODO: Thêm một số lưu ý, giải thích tại sao cần làm như vậy. Việc huấn luyện mô hình nên đơn giản, chạy ít file, sử dụng các file cấu hình .py hoặc .json để nạp cấu hình huấn luyện.
+
+TODO: Visualize quá trình huấn luyện mô hình
+
+TODO: Sau khi huần luyện, tải mô hình về ra sao?
