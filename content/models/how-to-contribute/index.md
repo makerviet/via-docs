@@ -48,7 +48,7 @@ version: "1.0"
 Chỉnh sửa các trường phía trên theo thông tin mô hình của bạn.
 
 
-### Một số lưu ý khi soạn thảo tài liệu:
+### Một số lưu ý khi tạo tài liệu
 
 - Hình ảnh, tệp sử dụng được để trực tiếp vào thư mục chứa file `index.md`. Không dùng hình ảnh bên ngoài hoặc mã base64.
 - Các bạn có thể tham khảo các folder sau để làm mẫu: `content/models/lane-line-detection-pinet`.
@@ -57,6 +57,12 @@ Chỉnh sửa các trường phía trên theo thông tin mô hình của bạn.
 ![](folder-structure.png)
 
 
-## 3. File index.md mẫu
+## 3. Soạn thảo file index.md
 
 Tham khảo kiến trúc file mẫu tại [đây](/vi/models/how-to-contribute/index-sample.txt).
+
+Toàn bộ file index.md nên được soạn bằng markdown thuần, hạn chế HTML.
+
+## 4. Tạo pull request
+
+Sau khi hoàn thành chỉnh sửa tài liệu, tạo pull request để cập nhật tài liệu.
