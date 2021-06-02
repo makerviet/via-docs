@@ -20,11 +20,11 @@ version: "1.0"
 
 Phát hiện vạch kẻ đường là bài toán rất quan trọng khi xây dựng xe tự hành. Có nhiều cách để máy tính có thể phát hiện làn đường từ một tấm hình. Cách cơ bản nhất ta có thể sử dụng các thuật toán xử lý ảnh để phát hiện vạch kẻ đường thông qua màu sắc hay các thuật toán phát hiện cạnh như Canny. Cao siêu hơn ta có thể sử dụng các mô hình máy học để phân đoạn hay phát hiện vạch kẻ. Mô hình được giới thiệu ở đây được xây dựng dựa trên kiến trúc **PiNet**.
 
-**Input:** Đầu vào của mô hình
+**Input:** Hình ảnh RGB có kích thước 512x256.
 
-**Output:** Đầu ra của mô hình là gì?
+**Output:** Tập tọa độ các điểm (pixel) trên line đường.
 
-TODO: Mô hình này tập trung vào tốc độ hay độ chính xác? Dựa trên thiết kế nào? Được huấn luyện trên bộ dữ liệu nào, gồm bao nhiêu ảnh - nói sơ qua.
+Mô hình dựa trên key points estimation và instance segmentation approach. PINet bao gồm một vài hourglass networks được xếp chồng lên nhau và được train đồng thời, vì vậy kích thước của mô hình có thể được thay đổi dựa trên sức mạnh tính toán phần cứng.
 
 ![Mô hình mạng PINet](pinet.png)
 
@@ -32,25 +32,27 @@ TODO: Mô hình này tập trung vào tốc độ hay độ chính xác? Dựa t
 
 ### 2. Kết quả
 
-**Demo:** TODO: Phần demo này nên có video hoặc hình động để thể hiện kết quả của mô hình.
+**Demo:** 
 
 ![Phát hiện vạch kẻ đường với PINet](https://github.com/ducnguyenhuynh/via-line-detection/raw/main/images/result_demo.gif)
 
-**Độ đo:** TODO: Metric được sử dụng là gì ? tính toán ra sao?
+**Độ đo:** Dựa trên độ chính xác của các pixel trên ground truth
 
-**Bộ dữ liệu kiểm tra:** TODO: Test set sử dụng là ở đâu? Chỉ rõ số lượng mẫu, phân bố mẫu.
+**Bộ dữ liệu kiểm tra:** Do tập dữ liệu còn hạn chế nên mô hình sẽ được đánh giá dựa trên tập validation
 
-**Độ chính xác và Tốc độ:** Độ chính xác mô hình là bao nhiêu? Tốc độ đạt được là bao nhiêu FPS? Có thể lập bảng nếu có nhiều kết quả độ chính xác ứng với các FPS khác nhau.
+**Độ chính xác và Tốc độ:** Accuracy trên tập val là 0.99. FPS đạt 35-40 (Phần cứng I5-9300H, GeForce GTX 1050) 
 
 ### 3. Hạn chế và hướng cải tiến
 
 **Hạn chế:**
 
-- Hạn chế của mô hình là gì ? Mất cân bằng dữ liệu? Tốc độ thấp? Độ chính xác chưa cao?
+<!-- - Hạn chế của mô hình là gì ? Mất cân bằng dữ liệu? Tốc độ thấp? Độ chính xác chưa cao? -->
+- Updating
 
 **Hướng cải tiến:**
-- Hướng cải thiện của mô hình trong tương lai...
-- Các ứng dụng khác của mô hình.
+- Convert sang TensorRT để deploy trên các jetson
+- Test mô hình trên CPU
+- Ứng dụng của mô hình: Autopilot
 
 ## II. Chạy thử và tích hợp mô hình
 
@@ -119,7 +121,7 @@ cd via-line-detection/
 ```
 
 ```python
-!wget https://github.com/ducnguyenhuynh/via-line-detection/releases/download/v1.0/via-data-line-detection.zip -O ./dataset.zip
+!wget https://github.com/ducnguyenhuynh/via-line-detection/releases/download/v1.1/via-dataset-line-dectection.zip -O ./dataset.zip
 !unzip dataset.zip
 !mv via-data-line-detection/ dataset
 !rm dataset.zip
@@ -130,15 +132,14 @@ cd via-line-detection/
 
 TODO: Thêm một số lưu ý, giải thích tại sao cần làm như vậy. Việc huấn luyện mô hình nên đơn giản, chạy ít file, sử dụng các file cấu hình .py hoặc .json để nạp cấu hình huấn luyện.
 
+
 ```python
 cd src
 ```
 
     /content/via-line-detection/src
 
-```python
- %pycat parameters.py
-```
+Cấu hình các hyperparameters trong quá trình train tại file parameters.py
 
 ```python
 %%writefile parameters.py
@@ -153,13 +154,12 @@ import cv2
 class Parameters():
     # thay đổi số lượng epoch ở đây
     n_epoch = 30
-
     l_rate = 0.0001
     weight_decay=1e-5
     save_path = "savefile/"
     # train from scratch.
     model_path = "savefile/"
-    batch_size = 16
+    batch_size = 8
     x_size = 512
     y_size = 256
     resize_ratio = 8
@@ -201,8 +201,8 @@ class Parameters():
     train_root_url="../dataset/train/"
     train_labels_root="../dataset/train/"
 
-    test_root_url="../dataset/train/"
-    test_labels_root="../dataset/train/"
+    test_root_url="../dataset/val/"
+    test_labels_root="../dataset/val/"
     
     # test parameter
     color = [(0,0,0), (255,0,0), (0,255,0),(0,0,255),(255,255,0),(255,0,255),(0,255,255),(255,255,255),(100,255,0),(100,0,255),(255,100,0),(0,100,255),(255,0,100),(0,255,100)]
@@ -240,562 +240,219 @@ class Parameters():
 
 
 
-```python
- %pycat train.py
-```
-
-
-```python
-%%writefile train.py
-#############################################################################################################
-##
-##  Source code for training. In this source code, there are initialize part, training part, ...
-##
-#############################################################################################################
-
-import cv2
-import torch
-import agent
-import numpy as np
-from data_loader import Generator
-from parameters import Parameters
-import test
-import evaluation
-import util
-import copy
-
-p = Parameters()
-
-###############################################################
-##
-## Training
-## 
-###############################################################
-def Training():
-    print('Training')
-
-    ####################################################################
-    ## Hyper parameter
-    ####################################################################
-    print('Initializing hyper parameter')
-    
-    #########################################################################
-    ## Get dataset
-    #########################################################################
-    print("Get dataset")
-    loader = Generator()
-
-    ##############################
-    ## Get agent and model
-    ##############################
-    print('Get agent')
-    if p.model_path == "":
-        lane_agent = agent.Agent()
-    else:
-        lane_agent = agent.Agent()
-        lane_agent.load_weights(34, "tensor(0.7828)")
-
-    ##############################
-    ## Check GPU
-    ##############################
-    print('Setup GPU mode')
-    if torch.cuda.is_available():
-        lane_agent.cuda()
-        #torch.backends.cudnn.benchmark=True
-
-    ##############################
-    ## Loop for training
-    ##############################
-    print('Training loop')
-    step = 0
-    sampling_list = None
-    loss_though_epoch = 0
-    for epoch in range(p.n_epoch):
-        lane_agent.training_mode()
-        for inputs, target_lanes, target_h, test_image, data_list in loader.Generate(sampling_list):
-            #training
-            #util.visualize_points(inputs[0], target_lanes[0], target_h[0])
-            print("epoch : " + str(epoch))
-            print("step : " + str(step))
-            loss_p = lane_agent.train(inputs, target_lanes, target_h, epoch, lane_agent, data_list)
-            torch.cuda.synchronize()
-            loss_p = loss_p.cpu().data
-            loss_though_epoch = loss_p
-                
-            if step%1000 == 0:
-                lane_agent.save_model(int(step/1000), loss_p)
-                testing(lane_agent, test_image, step, loss_p)
-            step += 1
-        lane_agent.save_model(int(epoch), loss_though_epoch)
-        sampling_list = copy.deepcopy(lane_agent.get_data_list())
-        lane_agent.sample_reset()
-
-        #evaluation:turn it off when training.
-        # if epoch >= 0 and epoch%1 == 0:
-        #     print("evaluation")
-        #     lane_agent.evaluate_mode()
-        #     th_list = [0.8]
-        #     index = [3]
-        #     lane_agent.save_model(int(step/100), loss_p)
-
-            # for idx in index:
-            #     print("generate result")
-            #     test.evaluation(loader, lane_agent, index = idx, name="test_result_"+str(epoch)+"_"+str(idx)+".json")
-
-        #     for idx in index:
-        #         print("compute score")
-        #         with open("/home/kym/Dropbox/eval_result2_"+str(idx)+"_.txt", 'a') as make_file:
-        #             make_file.write( "epoch : " + str(epoch) + " loss : " + str(loss_p.cpu().data) )
-        #             make_file.write(evaluation.LaneEval.bench_one_submit("test_result_"+str(epoch)+"_"+str(idx)+".json", "test_label.json"))
-        #             make_file.write("\n")
-        #         with open("eval_result_"+str(idx)+"_.txt", 'a') as make_file:
-        #             make_file.write( "epoch : " + str(epoch) + " loss : " + str(loss_p.cpu().data) )
-        #             make_file.write(evaluation.LaneEval.bench_one_submit("test_result_"+str(epoch)+"_"+str(idx)+".json", "test_label.json"))
-        #             make_file.write("\n")
-
-        if int(step)>700000:
-            break
-
-def testing(lane_agent, test_image, step, loss):
-    lane_agent.evaluate_mode()
-
-    _, _, ti = test.test(lane_agent, np.array([test_image]))
-
-    cv2.imwrite('test_result/result_'+str(step)+'_'+str(loss)+'.png', ti[0])
-
-    lane_agent.training_mode()
-
-    
-if __name__ == '__main__':
-    Training()
-```
-
-    Overwriting train.py
-
-
-
-```python
-%pycat agent.py
-```
-
-
-```python
-%%writefile agent.py
-
-#########################################################################
-##
-## train agent that has some utility for training and saving.
-##
-#########################################################################
-
-import torch.nn as nn
-import torch
-from util_hourglass import *
-from copy import deepcopy
-import numpy as np
-from torch.autograd import Variable
-from hourglass_network import lane_detection_network
-from torch.autograd import Function as F
-from parameters import Parameters
-import math
-import util
-import hard_sampling
-
-############################################################
-##
-## agent for lane detection
-##
-############################################################
-class Agent(nn.Module):
-
-    #####################################################
-    ## Initialize
-    #####################################################
-    def __init__(self):
-        super(Agent, self).__init__()
-
-        self.p = Parameters()
-
-        self.lane_detection_network = lane_detection_network()
-
-        self.setup_optimizer()
-
-        self.current_epoch = 0
-
-        self.hard_sampling = hard_sampling.hard_sampling()
-
-        print("model parameters: ")
-        print(self.count_parameters(self.lane_detection_network))
-
-    def count_parameters(self, model):
-            return sum(p.numel() for p in model.parameters() if p.requires_grad)
-
-    def setup_optimizer(self):
-        self.lane_detection_optim = torch.optim.Adam(self.lane_detection_network.parameters(),
-                                                    lr=self.p.l_rate,
-                                                    weight_decay=self.p.weight_decay)
-
-    #####################################################
-    ## Make ground truth for key point estimation
-    #####################################################
-    def make_ground_truth_point(self, target_lanes, target_h):
-
-        target_lanes, target_h = util.sort_batch_along_y(target_lanes, target_h)
-
-        ground = np.zeros((len(target_lanes), 3, self.p.grid_y, self.p.grid_x))
-        ground_binary = np.zeros((len(target_lanes), 1, self.p.grid_y, self.p.grid_x))
-
-        for batch_index, batch in enumerate(target_lanes):
-            for lane_index, lane in enumerate(batch):
-                
-                for point_index, point in enumerate(lane):
-                    if point > 0:
-                        x_index = int(point/self.p.resize_ratio)
-                        y_index = int(target_h[batch_index][lane_index][point_index]/self.p.resize_ratio)
-                        
-                        # print(x_index)
-                        # print(y_index)
-                        if y_index >= 32:
-                          y_index = 31
-                        ground[batch_index][0][y_index][x_index] = 1.0
-                        ground[batch_index][1][y_index][x_index]= (point*1.0/self.p.resize_ratio) - x_index
-                        ground[batch_index][2][y_index][x_index] = (target_h[batch_index][lane_index][point_index]*1.0/self.p.resize_ratio) - y_index
-                        ground_binary[batch_index][0][y_index][x_index] = 1
-
-        return ground, ground_binary
-
-
-    #####################################################
-    ## Make ground truth for instance feature
-    #####################################################
-    def make_ground_truth_instance(self, target_lanes, target_h):
-
-        ground = np.zeros((len(target_lanes), 1, self.p.grid_y*self.p.grid_x, self.p.grid_y*self.p.grid_x))
-
-        for batch_index, batch in enumerate(target_lanes):
-            temp = np.zeros((1, self.p.grid_y, self.p.grid_x))
-            lane_cluster = 1
-            for lane_index, lane in enumerate(batch):
-                previous_x_index = 0
-                previous_y_index = 0
-                for point_index, point in enumerate(lane):
-                    if point > 0:
-                        x_index = int(point/self.p.resize_ratio)
-                        y_index = int(target_h[batch_index][lane_index][point_index]/self.p.resize_ratio)
-                        if y_index >= 32:
-                          y_index = 31
-                        temp[0][y_index][x_index] = lane_cluster
-                    if previous_x_index != 0 or previous_y_index != 0: #interpolation make more dense data
-                        temp_x = previous_x_index
-                        temp_y = previous_y_index
-                        while False:
-                            delta_x = 0
-                            delta_y = 0
-                            temp[0][temp_y][temp_x] = lane_cluster
-                            if temp_x < x_index:
-                                temp[0][temp_y][temp_x+1] = lane_cluster
-                                delta_x = 1
-                            elif temp_x > x_index:
-                                temp[0][temp_y][temp_x-1] = lane_cluster
-                                delta_x = -1
-                            if temp_y < y_index:
-                                temp[0][temp_y+1][temp_x] = lane_cluster
-                                delta_y = 1
-                            elif temp_y > y_index:
-                                temp[0][temp_y-1][temp_x] = lane_cluster
-                                delta_y = -1
-                            temp_x += delta_x
-                            temp_y += delta_y
-                            if temp_x == x_index and temp_y == y_index:
-                                break
-                    if point > 0:
-                        previous_x_index = x_index
-                        previous_y_index = y_index
-                lane_cluster += 1
-
-            for i in range(self.p.grid_y*self.p.grid_x): #make gt
-                temp = temp[temp>-1]
-                gt_one = deepcopy(temp)
-                if temp[i]>0:
-                    gt_one[temp==temp[i]] = 1   #same instance
-                    if temp[i] == 0:
-                        gt_one[temp!=temp[i]] = 3 #different instance, different class
-                    else:
-                        gt_one[temp!=temp[i]] = 2 #different instance, same class
-                        gt_one[temp==0] = 3 #different instance, different class
-                    ground[batch_index][0][i] += gt_one
-
-        return ground
-
-    #####################################################
-    ## train
-    #####################################################
-    def train(self, inputs, target_lanes, target_h, epoch, agent, data_list):
-        point_loss = self.train_point(inputs, target_lanes, target_h, epoch, data_list)
-        return point_loss
-
-    #####################################################
-    ## compute loss function and optimize
-    #####################################################
-    def train_point(self, inputs, target_lanes, target_h, epoch, data_list):
-        real_batch_size = len(target_lanes)
-
-        #generate ground truth
-        ground_truth_point, ground_binary = self.make_ground_truth_point(target_lanes, target_h)
-        ground_truth_instance = self.make_ground_truth_instance(target_lanes, target_h)
-
-        # convert numpy array to torch tensor
-        ground_truth_point = torch.from_numpy(ground_truth_point).float()
-        ground_truth_point = Variable(ground_truth_point).cuda()
-        ground_truth_point.requires_grad=False
-
-        ground_binary = torch.LongTensor(ground_binary.tolist()).cuda()
-        ground_binary.requires_grad=False
-
-        ground_truth_instance = torch.from_numpy(ground_truth_instance).float()
-        ground_truth_instance = Variable(ground_truth_instance).cuda()
-        ground_truth_instance.requires_grad=False
-
-        #util.visualize_gt(ground_truth_point[0], ground_truth_instance[0], inputs[0])
-
-        # update lane_detection_network
-        result, attentions = self.predict_lanes(inputs)
-        lane_detection_loss = 0
-        exist_condidence_loss = 0
-        nonexist_confidence_loss = 0
-        offset_loss = 0
-        x_offset_loss = 0
-        y_offset_loss = 0
-        sisc_loss = 0
-        disc_loss = 0
-
-        # hard sampling ##################################################################
-        confidance, offset, feature = result[-1]
-        hard_loss = 0
-
-        for i in range(real_batch_size):
-            confidance_gt = ground_truth_point[i, 0, :, :]
-            confidance_gt = confidance_gt.view(1, self.p.grid_y, self.p.grid_x)
-            hard_loss =  hard_loss +\
-                torch.sum( (1-confidance[i][confidance_gt==1])**2 )/\
-                (torch.sum(confidance_gt==1)+1)
-
-            target = confidance[i][confidance_gt==0]
-            hard_loss =  hard_loss +\
-                                torch.sum( ( target[target>0.01] )**2 )/\
-                                (torch.sum(target>0.01)+1)
-
-            node = hard_sampling.sampling_node(loss = hard_loss.cpu().data, data = data_list[i], previous_node = None, next_node = None)
-            self.hard_sampling.insert(node)
-        
-        for (confidance, offset, feature) in result:
-            #compute loss for point prediction
-
-            #exist confidance loss##########################
-            #confidance = torch.sigmoid(confidance)
-            confidance_gt = ground_truth_point[:, 0, :, :]
-            confidance_gt = confidance_gt.view(real_batch_size, 1, self.p.grid_y, self.p.grid_x)
-            a = confidance_gt[0][confidance_gt[0]==1] - confidance[0][confidance_gt[0]==1]
-            exist_condidence_loss =  exist_condidence_loss +\
-                                torch.sum( (1-confidance[confidance_gt==1])**2 )/\
-                                torch.sum(confidance_gt==1)
-
-            #non exist confidance loss##########################
-            target = confidance[confidance_gt==0]
-            nonexist_confidence_loss =  nonexist_confidence_loss +\
-                                torch.sum( ( target[target>0.01] )**2 )/\
-                                (torch.sum(target>0.01)+1)
-
-            #offset loss ##################################
-            offset_x_gt = ground_truth_point[:, 1:2, :, :]
-            offset_y_gt = ground_truth_point[:, 2:3, :, :]
-
-            predict_x = offset[:, 0:1, :, :]
-            predict_y = offset[:, 1:2, :, :]
-
-            offset_loss = offset_loss + \
-                                    torch.sum( (offset_x_gt[confidance_gt==1] - predict_x[confidance_gt==1])**2 )/\
-                                        torch.sum(confidance_gt==1) + \
-                                    torch.sum( (offset_y_gt[confidance_gt==1] - predict_y[confidance_gt==1])**2 )/\
-                                        torch.sum(confidance_gt==1)
-
-            #compute loss for similarity #################
-            feature_map = feature.view(real_batch_size, self.p.feature_size, 1, self.p.grid_y*self.p.grid_x)
-            feature_map = feature_map.expand(real_batch_size, self.p.feature_size, self.p.grid_y*self.p.grid_x, self.p.grid_y*self.p.grid_x)#.detach()
-
-            point_feature = feature.view(real_batch_size, self.p.feature_size, self.p.grid_y*self.p.grid_x,1)
-            point_feature = point_feature.expand(real_batch_size, self.p.feature_size, self.p.grid_y*self.p.grid_x, self.p.grid_y*self.p.grid_x)#.detach()
-
-            distance_map = (feature_map-point_feature)**2 
-            distance_map = torch.sum( distance_map, dim=1 ).view(real_batch_size, 1, self.p.grid_y*self.p.grid_x, self.p.grid_y*self.p.grid_x)
-
-            # same instance
-            sisc_loss = sisc_loss+\
-                                torch.sum(distance_map[ground_truth_instance==1])/\
-                                torch.sum(ground_truth_instance==1)
-
-            # different instance, same class
-            count = (self.p.K1-distance_map[ground_truth_instance==2]) > 0
-            count = torch.sum(count).data
-            disc_loss = disc_loss + \
-                                torch.sum((self.p.K1-distance_map[ground_truth_instance==2])[(self.p.K1-distance_map[ground_truth_instance==2]) > 0])/\
-                                torch.sum(ground_truth_instance==2)
-
-        #attention loss
-        attention_loss = 0
-        source = attentions[:-1]
-        m = nn.Softmax(dim=0)
-        
-        for i in range(real_batch_size):
-            target = torch.sum((attentions[-1][i].data)**2, dim=0).view(-1) 
-            #target = target/torch.max(target)
-            target = m(target)
-            for j in source:
-                s = torch.sum(j[i]**2, dim=0).view(-1)
-                attention_loss = attention_loss + torch.sum( (m(s) - target)**2 )/(len(target)*real_batch_size)
-
-        lane_detection_loss = lane_detection_loss + self.p.constant_exist*exist_condidence_loss
-        lane_detection_loss = lane_detection_loss + self.p.constant_nonexist*nonexist_confidence_loss
-        lane_detection_loss = lane_detection_loss + self.p.constant_offset*offset_loss
-        lane_detection_loss = lane_detection_loss + self.p.constant_alpha*sisc_loss
-        lane_detection_loss = lane_detection_loss + self.p.constant_beta*disc_loss + 0.00001*torch.sum(feature**2)
-        lane_detection_loss = lane_detection_loss + self.p.constant_attention*attention_loss
-
-        print("######################################################################")
-        print("seg loss")
-        print("same instance loss: ", sisc_loss.data)
-        print("different instance loss: ", disc_loss.data)
-
-        print("point loss")
-        print("exist loss: ", exist_condidence_loss.data)
-        print("non-exit loss: ", nonexist_confidence_loss.data)
-        print("offset loss: ", offset_loss.data)
-
-        print("attention loss")
-        print("attention loss: ", attention_loss)
-
-        print("--------------------------------------------------------------------")
-        print("total loss: ", lane_detection_loss.data)
-
-        self.lane_detection_optim.zero_grad()
-        lane_detection_loss.backward()   #divide by batch size
-        self.lane_detection_optim.step()
-
-        del confidance, offset, feature
-        del ground_truth_point, ground_binary, ground_truth_instance
-        del feature_map, point_feature, distance_map
-        del exist_condidence_loss, nonexist_confidence_loss, offset_loss, sisc_loss, disc_loss
-
-        trim = 180 #70+30+70 + 110
-        if epoch>0 and epoch%100==0 and self.current_epoch != epoch:
-            self.current_epoch = epoch
-            if epoch == 30-trim:
-                self.p.l_rate = 0.0005
-                self.setup_optimizer()
-            elif epoch == 60-trim:
-                self.p.l_rate = 0.0002
-                self.setup_optimizer()
-            elif epoch == 90-trim:
-                self.p.l_rate = 0.0001
-                self.setup_optimizer()
-            elif epoch == 100-trim:
-                self.p.l_rate = 0.00005
-                self.setup_optimizer()
-            elif epoch == 110-trim:
-                self.p.l_rate = 0.00002
-                self.setup_optimizer()
-            elif epoch == 180-trim:
-                self.p.l_rate = 0.00001
-                self.setup_optimizer()
-            elif epoch == 200-trim:
-                self.p.l_rate = 0.000005
-                self.setup_optimizer()
-            elif epoch == 230-trim:
-                self.p.l_rate = 0.000001
-                self.setup_optimizer()           
-            elif epoch == 260-trim:
-                self.p.l_rate = 0.0000005
-                self.setup_optimizer()  
-            elif epoch == 290-trim:
-                self.p.l_rate = 0.0000001
-                self.setup_optimizer()  
-            elif epoch == 350-trim:
-                self.p.l_rate = 0.00000001
-                self.setup_optimizer()    
-
-        return lane_detection_loss
-
-    #####################################################
-    ## predict lanes
-    #####################################################
-    def predict_lanes(self, inputs):
-        inputs = torch.from_numpy(inputs).float() 
-        inputs = Variable(inputs).cuda()
-
-        return self.lane_detection_network(inputs)
-
-    #####################################################
-    ## predict lanes in test
-    #####################################################
-    def predict_lanes_test(self, inputs):
-        inputs = torch.from_numpy(inputs).float() 
-        inputs = Variable(inputs).cuda()
-        
-        outputs, features = self.lane_detection_network(inputs)
-
-        return outputs
-
-    #####################################################
-    ## Training mode
-    #####################################################                                                
-    def training_mode(self):
-        self.lane_detection_network.train()
-
-    #####################################################
-    ## evaluate(test mode)
-    #####################################################                                                
-    def evaluate_mode(self):
-        self.lane_detection_network.eval()
-
-    #####################################################
-    ## Setup GPU computation
-    #####################################################                                                
-    def cuda(self):
-        #GPU_NUM = 1
-        #device = torch.device(f'cuda:{GPU_NUM}' if torch.cuda.is_available() else 'cpu')
-        #torch.cuda.set_device(device) 
-        self.lane_detection_network.cuda()
-
-    #####################################################
-    ## Load save file
-    #####################################################
-    def load_weights(self, epoch, loss):
-        self.lane_detection_network.load_state_dict(
-            torch.load(self.p.model_path+str(epoch)+'_'+str(loss)+'_'+'lane_detection_network.pkl', map_location='cuda:0'), False
-        )
-
-    #####################################################
-    ## Save model
-    #####################################################
-    def save_model(self, epoch, loss):
-        torch.save(
-            self.lane_detection_network.state_dict(),
-            self.p.save_path+str(epoch)+'_'+str(loss)+'_'+'lane_detection_network.pkl'
-        )
-
-    def get_data_list(self):
-        return self.hard_sampling.get_list()
-
-    def sample_reset(self):
-        self.hard_sampling = hard_sampling.hard_sampling()
-```
-
 Giờ thì train thôi :))))
 
 ```python
 !python train.py
 ```
 
-TODO: Visualize quá trình huấn luyện mô hình
+    Training
+    Initializing hyper parameter
+    Get dataset
+    1423
+    Get agent
+    model parameters: 
+    4056849
+    Setup GPU mode
+    Training loop
+    epoch : 0
+    step : 0
+    ######################################################################
+    seg loss
+    same instance loss:  tensor(0.0943, device='cuda:0')
+    different instance loss:  tensor(0.0218, device='cuda:0')
+    point loss
+    exist loss:  tensor(0.3546, device='cuda:0')
+    non-exit loss:  tensor(0.0907, device='cuda:0')
+    offset loss:  tensor(0.1419, device='cuda:0')
+    attention loss
+    attention loss:  0
+    --------------------------------------------------------------------
+    total loss:  tensor(0.5981, device='cuda:0')
+    epoch : 0
+    step : 1
+    ######################################################################
+    seg loss
+    same instance loss:  tensor(0.0061, device='cuda:0')
+    different instance loss:  tensor(3.4911e-06, device='cuda:0')
+    point loss
+    exist loss:  tensor(0.0507, device='cuda:0')
+    non-exit loss:  tensor(0.0819, device='cuda:0')
+    offset loss:  tensor(0.0770, device='cuda:0')
+    attention loss
+    attention loss:  0
+    --------------------------------------------------------------------
+    total loss:  tensor(0.2172, device='cuda:0')
+    epoch : 0
+    step : 2
+    ######################################################################
+    seg loss
+    same instance loss:  tensor(0.0475, device='cuda:0')
+    different instance loss:  tensor(0.0068, device='cuda:0')
+    point loss
+    exist loss:  tensor(0.2414, device='cuda:0')
+    non-exit loss:  tensor(0.0695, device='cuda:0')
+    offset loss:  tensor(0.1065, device='cuda:0')
+    attention loss
+    attention loss:  0
+    --------------------------------------------------------------------
+    total loss:  tensor(0.4255, device='cuda:0')
+    epoch : 0
+    step : 3
+    ######################################################################
+    seg loss
+    same instance loss:  tensor(0.0038, device='cuda:0')
+    different instance loss:  tensor(0.0040, device='cuda:0')
+    point loss
+    exist loss:  tensor(0.0745, device='cuda:0')
+    non-exit loss:  tensor(0.0716, device='cuda:0')
+    offset loss:  tensor(0.0846, device='cuda:0')
+    attention loss
+    attention loss:  0
+    --------------------------------------------------------------------
+    total loss:  tensor(0.2313, device='cuda:0')
+    epoch : 0
+    step : 4
+    ######################################################################
+    seg loss
+    same instance loss:  tensor(0.0685, device='cuda:0')
+    different instance loss:  tensor(0.0691, device='cuda:0')
+    point loss
+    exist loss:  tensor(0.4021, device='cuda:0')
+    non-exit loss:  tensor(0.0708, device='cuda:0')
+    offset loss:  tensor(0.1418, device='cuda:0')
+    attention loss
+    attention loss:  0
+    --------------------------------------------------------------------
+    total loss:  tensor(0.6355, device='cuda:0')
+    epoch : 0
+    step : 5
+    ######################################################################
+    seg loss
+    same instance loss:  tensor(0.0483, device='cuda:0')
+    different instance loss:  tensor(0.0267, device='cuda:0')
+    point loss
+    exist loss:  tensor(0.1934, device='cuda:0')
+    non-exit loss:  tensor(0.0707, device='cuda:0')
+    offset loss:  tensor(0.1102, device='cuda:0')
+    attention loss
+    attention loss:  0
+    --------------------------------------------------------------------
+    total loss:  tensor(0.3866, device='cuda:0')
+    epoch : 0
+    step : 6
+    ######################################################################
+    seg loss
+    same instance loss:  tensor(0.0211, device='cuda:0')
+    different instance loss:  tensor(0.0054, device='cuda:0')
+    point loss
+    exist loss:  tensor(0.1774, device='cuda:0')
+    non-exit loss:  tensor(0.0628, device='cuda:0')
+    offset loss:  tensor(0.1049, device='cuda:0')
+    attention loss
+    attention loss:  0
+    --------------------------------------------------------------------
+    total loss:  tensor(0.3374, device='cuda:0')
+    epoch : 0
+    step : 7
+    ######################################################################
+    seg loss
+    same instance loss:  tensor(0.0165, device='cuda:0')
+    different instance loss:  tensor(0.0045, device='cuda:0')
+    point loss
+    exist loss:  tensor(0.1225, device='cuda:0')
+    non-exit loss:  tensor(0.0599, device='cuda:0')
+    offset loss:  tensor(0.0911, device='cuda:0')
+    attention loss
+    attention loss:  0
+    --------------------------------------------------------------------
+    total loss:  tensor(0.2740, device='cuda:0')
+    epoch : 0
+    step : 8
+    ######################################################################
+    seg loss
+    same instance loss:  tensor(0.0289, device='cuda:0')
+    different instance loss:  tensor(0.0136, device='cuda:0')
+    point loss
+    exist loss:  tensor(0.1794, device='cuda:0')
+    non-exit loss:  tensor(0.0724, device='cuda:0')
+    offset loss:  tensor(0.1030, device='cuda:0')
+    attention loss
+    attention loss:  0
+    --------------------------------------------------------------------
+    total loss:  tensor(0.3552, device='cuda:0')
+    epoch : 0
+    step : 9
+    ######################################################################
+    seg loss
+    same instance loss:  tensor(0.0225, device='cuda:0')
+    different instance loss:  tensor(0.0077, device='cuda:0')
+    point loss
+    exist loss:  tensor(0.1470, device='cuda:0')
+    non-exit loss:  tensor(0.0466, device='cuda:0')
+    offset loss:  tensor(0.0960, device='cuda:0')
+    attention loss
+    attention loss:  0
+    --------------------------------------------------------------------
+    total loss:  tensor(0.2884, device='cuda:0')
+    epoch : 0
+    step : 10
+    ######################################################################
+
+### 5 Đánh giá
+
+``` python
+!python test.py
+```
+    1423
+    model parameters: 
+    4056849
+    7% 1/15 [00:00<00:02,  6.87it/s]
+    31it [00:04,  7.33it/s]
+``` python
+!python evaluation.py
+```
+    [{"name":"Accuracy","value":0.9974696356275303,"order":"desc"},{"name":"FP","value":0.42309620204357173,"order":"asc"},{"name":"FN","value":0.0,"order":"asc"}]
+
+Accuracy đạt 0,99 với trên tập val
+
+### 6 Chạy Demo
+
+Thay đổi một số đường dẫn trong các file py:
+- util_hourglass.py: uncomment line 9, comment line 8
+- hourglass_network.py: uncomment line 9, comment line 8
+- processing_image.py: uncomment line 4, comment line 5
+- util.py: uncomment line 10, comment line 9
+
+Demo trên ảnh 
+``` python
+!python demo_line_detection.py -o image -d "images_test/2lines-00001086.jpg"
+```
+Demo trên video
+
+    Tải video
+``` python
+!mkdir video
+!wget https://github.com/ducnguyenhuynh/via-line-detection/releases/download/v1.0/demo.avi -O video/demo.avi
+```
+    --2021-04-19 14:40:52--  https://github.com/ducnguyenhuynh/via-line-detection/releases/download/v1.0/demo.avi
+    Resolving github.com (github.com)... 192.30.255.112
+    Connecting to github.com (github.com)|192.30.255.112|:443... connected.
+    HTTP request sent, awaiting response... 302 Found
+    Location: https://github-releases.githubusercontent.com/354692123/ae188000-a157-11eb-8cb8-460239f853a9?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210419T144052Z&X-Amz-Expires=300&X-Amz-Signature=9eaec88e116e1c0886a6949db168f1ec76d2495d55a227ca6a383fbbf5b95c8e&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=354692123&response-content-disposition=attachment%3B%20filename%3Ddemo.avi&response-content-type=application%2Foctet-stream [following]
+    --2021-04-19 14:40:52--  https://github-releases.githubusercontent.com/354692123/ae188000-a157-11eb-8cb8-460239f853a9?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210419T144052Z&X-Amz-Expires=300&X-Amz-Signature=9eaec88e116e1c0886a6949db168f1ec76d2495d55a227ca6a383fbbf5b95c8e&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=354692123&response-content-disposition=attachment%3B%20filename%3Ddemo.avi&response-content-type=application%2Foctet-stream
+    Resolving github-releases.githubusercontent.com (github-releases.githubusercontent.com)... 185.199.110.154, 185.199.109.154, 185.199.111.154, ...
+    Connecting to github-releases.githubusercontent.com (github-releases.githubusercontent.com)|185.199.110.154|:443... connected.
+    HTTP request sent, awaiting response... 200 OK
+    Length: 39065134 (37M) [application/octet-stream]
+    Saving to: ‘video/demo.avi’
+
+    video/demo.avi      100%[===================>]  37.25M  51.5MB/s    in 0.7s    
+
+    2021-04-19 14:40:53 (51.5 MB/s) - ‘video/demo.avi’ saved [39065134/39065134]
+
+``` python 
+!python demo_line_detection.py -o video -d "video/demo.avi" -s 1
+```
 
 TODO: Sau khi huần luyện, tải mô hình về ra sao?
