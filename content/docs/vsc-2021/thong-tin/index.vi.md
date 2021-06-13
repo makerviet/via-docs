@@ -9,14 +9,13 @@ draft: false
 
 ## 1. Thông báo từ BTC
 
-- Buổi đào tạo tiếp theo: 20h30 - 06/06/2021.
+13/06/2021: BTC cập nhật [starter code](https://github.com/makerhanoi/via-starter-kit-vsc-2021) cho dự án VIABot kết hợp ESP32-CAM tại Repo này chứa mã nguồn cho starter code của Viet Nam STEAM Challenge 2021, cung cấp các ví dụ về điều khiển robot tự hành qua mạch VIA Makerbot và các ứng dụng AI có thể làm được với phần cứng này.
 
 Để chuẩn bị cho buổi đào tạo tiếp theo, và thực hiện các thử thách thú vị liên quan đến robot và trí tuệ nhân tạo, các đội chơi cần chuẩn bị sớm một số mạch và đồ dùng như sau:
 
 - Mạch ESP32 - CAM: <https://bit.ly/3fFHPOe>.
 - Robot khung tròn nhỏ hoặc 1 khung xe tương đương: <https://bit.ly/3plS8u8>.
 - Tay cầm chơi game Sony PS2: <https://bit.ly/3ijm9ZM>.
-
 ## 2. Xem lại các buổi đào tạo
 
 Dưới dây là video quay màn hình các buổi đào tạo của cuộc thi VSC 2021 phục vụ các đội xem lại. Các câu hỏi được gửi trực tiếp vào nhóm FB Messenger và sẽ được các mentor trả lời.
