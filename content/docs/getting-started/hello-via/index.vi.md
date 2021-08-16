@@ -1,6 +1,6 @@
 ---
 version: 1
-title: Hello VIA! - Làm quen với VIA
+title: Hello VIA! - Làm quen với VIA v0.1 - Python
 weight: -10
 ---
 

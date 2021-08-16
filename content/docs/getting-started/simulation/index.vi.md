@@ -1,6 +1,6 @@
 ---
 version: 1
-title: "Làm quen với giả lập VIA Simulator"
+title: "Làm quen với giả lập VIA Simulator v0.1"
 weight: 90
 ---
 
