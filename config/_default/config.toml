@@ -3,7 +3,7 @@ title = "VIA - Vietnam Autonomous"
 theme = "zdoc"
 
 defaultContentLanguage = "vi"
-defaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = false
 hasCJKLanguage = false
 
 copyright = "&copy; {year}, All Rights Reserved"
