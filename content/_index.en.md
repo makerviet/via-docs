@@ -1,7 +1,7 @@
 ---
 version: 1
 title: VIA - Vietnam Autonomous
-description: "Welcome to VIA Autonomous - an open source self driving car platform for learning AI, Computer Vision and Electronics."
+description: "VIA is an open source self driving car platform for learning AI, Computer Vision and Electronics. Let's get started with our free tutorials, customizable testing environment and our PCB designs for small autonomous robots."
 date: 2021-01-26T04:15:05+09:00
 draft: false
 # updatesBanner: "Banner - &nbsp; [Hugo ZDoc theme](https://github.com/zzossig/hugo-theme-zdoc) &nbsp; just arrived"
@@ -12,7 +12,7 @@ landing:
   title:
     - VIA (Vietnam Autonomous)
   text:
-    - "Welcome to VIA Project - an open source self driving car platform for learning AI, Computer Vision and Electronics."
+    - "VIA is an open source self driving car platform for learning AI, Computer Vision and Electronics. Let's get started with our free tutorials, customizable testing environment and our PCB designs for small autonomous robots."
   titleColor:
   textColor:
   spaceBetweenTitleText: 25
