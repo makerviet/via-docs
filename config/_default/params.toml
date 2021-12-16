@@ -1,5 +1,5 @@
 logo = true
-logoText = "VIA Project"
+logoText = "VIA Autonomous"
 logoType = "short" # long, short
 description = "3D-printed self-driving car"
 

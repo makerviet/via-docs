@@ -1,23 +1,24 @@
 ---
 version: 1
 title: VIA - Vietnam Autonomous
-description: "Vietnam Autonomous is an open-source project initiated by MakerHanoi to create an open platform for autonomous vehicles. We aim to help students, makers, and hobbyists to build their own 3D printed cars as the platforms for studying AI."
+description: "Welcome to VIA Autonomous - an open source self driving car platform for learning AI, Computer Vision and Electronics."
 date: 2021-01-26T04:15:05+09:00
 draft: false
 # updatesBanner: "Banner - &nbsp; [Hugo ZDoc theme](https://github.com/zzossig/hugo-theme-zdoc) &nbsp; just arrived"
 landing:
   height: 600
   image: /media/via-logo.png
+  banner: /racing-banner.png
   title:
-    - VIA - Vietnam Autonomous
+    - VIA (Vietnam Autonomous)
   text:
-    - "Vietnam Autonomous is an open-source project initiated by MakerHanoi to create an open platform for autonomous vehicles. We aim to help students, makers, and hobbyists to build their own 3D printed cars as the platforms for studying 4.0 technologies."
+    - "Welcome to VIA Project - an open source self driving car platform for learning AI, Computer Vision and Electronics."
   titleColor:
   textColor:
   spaceBetweenTitleText: 25
   buttons:
     - link: docs
-      text: EXPLORE
+      text: EXPLORE »
       color: primary
   # backgroundImage: 
   #   src: images/landscape.jpg
@@ -56,15 +57,15 @@ sections:
     description: "The core components of VIA project"
     header: 
       title: Platform
-      hlcolor: "#8bc34a"
+      hlcolor: "#ffeb0080"
       color: '#fff'
       fontSize: 32
       width: 220
     cards:
-      - subtitle: Hardware
+      - subtitle: Software
         subtitlePosition: center
-        description: "We develop the best circuit boards and components at a reasonable price as a platform to build 3D printed car models with the criteria of simplicity, ease of deployment, and ease of expansion."
-        image: images/section/circuit-board.png
+        description: "We provide baseline source code and tutorials for you to build your own self-driving car, which can run autonomously in our simulation environment and physically on our 3D printed car platform."
+        image: images/section/machine-learning.png
         color: white
         button: 
           name: "More"
@@ -73,10 +74,10 @@ sections:
           target: _blank
           color: '#222'
           bgcolor: 'white'
-      - subtitle: Software
+      - subtitle: Hardware
         subtitlePosition: center
-        description: "Our Software platform is developed to be friendly for all users. AI model integration,  algorithm implementation, and hardware communication are all convenient and require no effort."
-        image: images/section/code.png
+        description: "We develop and open source the best circuit boards and components at a reasonable price as a platform to build mini self-driving car projects. Everyone can build a physical self-driving car with our design."
+        image: images/section/cpu.png
         color: white
         button: 
           name: "More"
@@ -87,7 +88,7 @@ sections:
           bgcolor: 'white'
       - subtitle: Community
         subtitlePosition: center
-        description: "We are building a strong community in the field of hardware, software and artificial intelligence. Together, we can learn mechanical engineering, electrical engineering, AI, and apply these knowledge to build awesome autonomous vehicles."
+        description: "We are building a strong community in the field of hardware, software and artificial intelligence. Together, we can learn electrical engineering, AI, mechanical engineering, and apply these knowledge to build awesome projects."
         image: images/section/equality.png
         color: white
         button: 
@@ -97,20 +98,21 @@ sections:
           target: _blank
           color: '#222'
           bgcolor: 'white'
-  - bgcolor: "#04718c"
+  - bgcolor: "#232f3e"
     type: normal
     # description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eleifend erat. Integer eget mattis augue. Suspendisse semper laoreet tortor sed convallis. Nulla ac euismod lorem"
-    # header:
-    #   title: Build your next project with VIA
-    #   hlcolor: "#f6ff00"
-    #   color: "#323232"
-    #   fontSize: 32
-    #   width: 340
+    header:
+      title: Learn and Build with VIA
+      hlcolor: "#ffbc008c"
+      color: "#63dbff"
+      fontSize: 32
+      width: 340
     body:
-      subtitle: Let's build with VIA!
+      subtitle: Build your first self-driving car step-by-step!
       subtitlePosition: left
-      description: "Contribute your ideas, your source code or join us to make this awesome project possible! Contribute your ideas, your source code or join us to make this awesome project possible!"
-      color: white
-      image: images/brick.svg 
+      description: "Get started with our [Documentation](/en/docs/)."
+      color: "#fff"
+      image: media/car.png
       imagePosition: left
+    color: "#fff"
 ---

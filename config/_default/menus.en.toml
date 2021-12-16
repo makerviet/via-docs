@@ -1,20 +1,21 @@
 [[main]]
-  identifier = "Docs"
+  identifier = "Documentation"
   name = "Documentation"
   url = "docs"
   weight = 1
-
-[[main]]
-  identifier = "Updates"
-  name = "Updates"
-  url = "updates"
-  weight = 2
 
 [[main]]
   identifier = "Blog"
   name = "Blog"
   url = "blog"
   weight = 3
+
+[[main]]
+  identifier = "Community"
+  name = "Community"
+  url = "blog"
+  weight = 3
+
 
 [[main]]
   identifier = "Contact"

@@ -1,9 +1,9 @@
 [vi]
-  title = "VIA - Vietnam Autonomous"
+  title = "VIA Autonomous"
   languageName = "Tiếng Việt"
   weight = 10
 
 [en]
-  title = "VIA - Vietnam Autonomous"
+  title = "VIA Autonomous"
   languageName = "English"
   weight = 20

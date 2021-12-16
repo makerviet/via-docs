@@ -1,5 +1,28 @@
 {{ with .Params.landing }}
 {{ $landing := . }}
+<video autoplay muted loop id="banner-video">
+  <source src="/racing-banner.mp4" type="video/mp4">
+</video>
+<div id="banner-cover">
+</div>
+<style>
+  #banner-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  #banner-cover {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+</style>
 <div class="divider">
   <div class="lmr">
     {{ with .backgroundImage }}
@@ -8,7 +31,7 @@
     <div class="home__landing" style="height: {{ .height }}px;">
       {{ if .image }}
         <div class="home__landing--img">
-          <img src="{{ .image | relURL }}" alt="Site Landing Page image">
+          <img src="{{ .image | relURL }}" alt="VIA - Vietnam Autonomous">
         </div>
         <div class="home__landing--txt">
           {{ if .title }}
@@ -18,9 +41,6 @@
               </div>
             {{ end }}
           {{ end }}
-            {{ if .spaceBetweenTitleText }}
-              <div style="height: {{ .spaceBetweenTitleText }}px"></div>
-            {{ end }}
           {{ if .text }}
             {{ range .text }}
               <div class="text" style="{{ with $landing.textColor }}color:{{ . }}{{ end }};">

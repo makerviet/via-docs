@@ -52,21 +52,62 @@
     margin-left: auto;
     margin-right: auto;
     height: auto!important;
-}
-
-.home__landing--img img {
-    width: 60rem;
+    min-height: 25rem;
 }
 
 .section__normal--img-wrapper img {
-    width: 26rem;
+    width: 16rem;
 }
 
 .home__landing--txt .title {
-    font-size: 3.2rem;
+    font-size: 2.0rem;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: .5rem 1rem;
+    margin-bottom: 0.2rem;
+    border-radius: 0.5rem;
 }
 
 .home__landing--txt .text {
+    margin-top: 0.2rem;
     font-size: 1.2rem;
     text-align: justify;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.section__card--img {
+    max-width: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.theme__light .button[data-color=primary] {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+    border: 1px solid #7a3700;
+    background-color: #db6300;
+}
+
+.theme__light .button[data-color=primary]:hover {
+    background-color: #b65200;
+}
+
+
+.home__landing--img {
+    width: 400px;
+}
+.home__landing--img img {
+    width: 300px;
+    max-width: 300px;
+    height: auto;
+}
+@media only screen and (max-width: 600px) {
+    .home__landing--img img {
+      display: none;
+    }
 }
