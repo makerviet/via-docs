@@ -2,7 +2,7 @@ baseURL = "https://via.makerviet.org/"
 title = "VIA Autonomous"
 theme = "zdoc"
 
-defaultContentLanguage = "en"
+defaultContentLanguage = "vi"
 defaultContentLanguageInSubdir = true
 hasCJKLanguage = false
 
