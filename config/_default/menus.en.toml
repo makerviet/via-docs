@@ -8,7 +8,7 @@
   identifier = "Blog"
   name = "Blog"
   url = "blog"
-  weight = 3
+  weight = 2
 
 [[main]]
   identifier = "Community"
@@ -16,9 +16,14 @@
   url = "https://www.facebook.com/makerhanoi"
   weight = 3
 
+[[main]]
+  identifier = "Team"
+  name = "Team"
+  url = "team"
+  weight = 4
 
 [[main]]
   identifier = "Contact"
   name = "Contact"
   url = "contact"
-  weight = 4
+  weight = 5

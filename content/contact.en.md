@@ -6,8 +6,6 @@ date: 2020-01-28T00:10:48+09:00
 draft: false
 ---
 
-Contact us for information
-
 **MakerHanoi Team**
 
 - **FB Fanpage:** <https://www.facebook.com/makerhanoi>.

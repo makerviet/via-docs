@@ -1,82 +1,82 @@
 ---
 version: 0
-title: Dữ liệu Cuộc Đua Số 2020 - Goodgame
+title: Data Digital Race 2020 - Goodgame
 weight: 40
 ---
 
 
-Bộ dữ liệu được chia sẻ tại đây được dùng để huấn luyện mô hình cho đội chơi **Goodgame**, dành vô địch [Cuộc đua số](https://cuocduaso.fpt.com.vn/en) - Cuộc thi lập trình xe tự hành cho sinh viên 2020. Nhiệm vụ của mỗi đội chơi là huần luyện, tối ưu các mô hình AI, đồng thời tích hợp chúng trên mô hình xe tự lái sử dụng bo mạch Jetson TX2 của NVIDIA nhằm chạy bám theo làn đường quy định, đi theo biển báo chỉ dẫn và tránh các vật cản trên đường. Đội **Goodgame**, bằng rất nhiều tài năng và nỗ lực đã dành quán quân. Đội trưởng **Goodgame** là Đạt Vũ đã hỗ trợ chia sẻ mã nguồn và các dữ liệu các bạn đã sử dụng để huấn luyện các mô hình AI của mình. 
+The dataset shared here is used to train the model for the team playing **Goodgame**, winning the [Digital Race](https://cuocduaso.fpt.com.vn/en) - Contest self-driving car programming for students in 2020. Each team's task is to train and optimize AI models, and at the same time integrate them on a self-driving car model using NVIDIA's Jetson TX2 board to follow. in the designated lanes, follow directional signs and avoid obstacles on the road. The **Goodgame** team, with a lot of talent and effort, won the championship. **Goodgame** captain Dat Vu helped share the source code and the data you used to train your AI models.
 
-![Cuộc Đua Số 2020](cuoc-dua-so.png)
+![Digital Race 2020](cuoc-dua-so.png)
 
-## 1. Link tải dữ liệu
+## 1. Link to download data
 
-Dữ liệu được chia theo 2 nhiệm vụ chính: Phát hiện biển báo và phát hiện làn đường.
+The data is divided into two main tasks: Sign detection and lane detection.
 
-* [Dữ liệu cho phát hiện biển báo](https://drive.google.com/file/d/1NGrKWHc1z_4bOh2huWHC8kZsUZFXOku-/view)
-* [Dữ liệu cho phân đoạn làn đường](https://drive.google.com/file/d/1X-onXnGbrIwuXTt03rK-6FV3w2bGNyK8/view?usp=sharing)
+* [Data for sign detection](https://drive.google.com/file/d/1NGrKWHc1z_4bOh2huWHC8kZsUZFXOku-/view)
+* [Data for lane segment](https://drive.google.com/file/d/1X-onXnGbrIwuXTt03rK-6FV3w2bGNyK8/view?usp=sharing)
 
-## 2. Thông tin về dữ liệu
+## 2. Information about data
 
-Dữ liệu cho phát hiện biển báo được cấu trúc như sau:
+The data for sign detection is structured as follows:
 
 ```
-Object Detection 
-    │─── Data
+Object Detection
+    Data
          |───000000_10.png
          |───000001_10.png
-         |─── ...
+         |───...
     │─── test.csv
-    │─── train.csv
+    train.csv
 ```
 
-Bộ dữ liệu này bao gồm **12,764** ảnh trong tập huấn luyện - training set và **2,561** ảnh trong tập giám sát - validation set, với 6 lớp biển báo:
+This dataset includes **12,764** images in the training set - training set and **2,561** images in the monitoring set - validation set, with 6 classes of signs:
 
-- Rẽ trái: Turn left
-- Rẽ phải: Turn Right
-- Đi thẳng: Straight
-- Dừng: Stop
-- Cấm rẽ trái: No Turn Left
-- Cấm rẽ phải: No Turn Right
+- Turn left
+- Turn right
+- Go straight
+- Stop
+- No Turn Left
+- No Turn Right
 
-Nhãn của tập dữ liệu được chứa trong các tệp .csv với cấu trúc như sau:
+The labels of the dataset are contained in `.csv` files with the following structure:
 
 | filename | xmin | ymin | xmax | ymax | class_id |
 | -------- | -------- | -------- | -------- | -------- | -------- |
-| 00072.jpg     | 148     | 53     | 159     | 63     | 4     |
+| 00072.jpg | 148 | 53 | 159 | 63 | 4 |
 
-![Dữ liệu cho nhận dạng biển báo](object-detection-data.png)
+![Data for sign recognition](object-detection-data.png)
 
-### Bộ dữ liệu phân đoạn làn đường:
+### Lane Segment Dataset:
 
-Cấu trúc thư mục:
+Directory structure:
 ```
 Segmentation
-    │─── GGDataSet
+    GGDataSet
          |─── train_frames
              |─── train
                  |─── train_000001.png
          |─── train_masks
              |─── train
-                 |─── train_000001.png         
+                 |─── train_000001.png
          |─── val_frames
              |─── val
-                 |─── val_000001.png         
+                 |─── val_000001.png
          |─── val_masks
              |─── val
-                 |─── val_000001.png         
+                 |─── val_000001.png
          |─── label_colors.txt
     │─── model_pb
-    │─── models
-    │─── train.py
+    models
+    train.py
     │─── convert_pb.py
 ```
 
-Bộ dữ liệu gồm **6,240** ảnh trong tập huấn luyện - training set và **1,448** ảnh trong tập giám sát - validation set, bao gồm nhãn phân đoạn cho 3 lớp: Nền (Background), Vạch kẻ đường (Line) và Lòng đường (Road). 
+The data set includes **6240** images in the training set - training set and **1448** images in the monitoring set - validation set, including segment labels for 3 layers: **Background**, **Road lines** and **Road**.
 
-![Dữ liệu phân đoạn làn đường](segmentation-data.png)
+![lane segment data](segmentation-data.png)
 
 
-## 3. Mã nguồn
+## 3. Source code
 
-Các bạn quan tâm có thể xem các notebook để huấn luyện các mạng học sâu sử dụng các bộ dữ liệu này tại link sau: <https://github.com/makerhanoi/via-dataset>. **Goodgame** cũng chia sẻ mã nguồn của mình cho cộng đồng tại [đây](https://github.com/datvuthanh/Digital-Race).
+Those interested can see the notebooks for training deep learning networks using these datasets at the following link: <https://github.com/makerhanoi/via-dataset>. **Goodgame** also shares their source code to the community at [here](https://github.com/datvuthanh/Digital-Race). 

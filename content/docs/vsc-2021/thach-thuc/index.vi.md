@@ -5,7 +5,7 @@ weight: 10
 draft: false
 ---
 
-Các thách thức của VSC 2021 là gì ?
+## Các thách thức của VSC 2021 là gì ?
 
 - 1. C0 - A - Art - Khả năng sáng tạo làm video về đội tuyển và các hoạt động
 - 2. C1 - T - Technology Giới thiệu về sản phẩm và những công nghệ ứng dụng.

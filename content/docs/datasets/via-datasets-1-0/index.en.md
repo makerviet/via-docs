@@ -1,20 +1,21 @@
 ---
 version: 0
-title: Dữ liệu chính thức của dự án VIA - VIA Datasets 1.0
+title: VIA Datasets 1.0
 weight: 30
 ---
 
-Dữ liệu luôn là một yếu tố quyết định khi phát triển các thuật toán và mô hình trong lĩnh vực trí tuệ nhân tạo AI. Nhận định được điều đó, nhóm VIA coi các bộ dữ liệu mở là một phần trọng tâm của dự án. VIA datasets 1.0 được đóng gói và ra mắt cộng đồng, bao gồm 2 bộ dữ liệu nhỏ:
+Data has always been a decisive factor when developing algorithms and models in the field of AI. Realizing that, the VIA team considers open datasets a central part of the project. VIA datasets 1.0 is packaged and released to the community, including 2 small datasets:
 
-- **VIA Traffic sign dataset** - Dữ liệu phát hiện biển báo cho xe tự hành mô hình
-    + Là dữ liệu ảnh được chụp từ xe tự hành của cuộc thi Cuộc Đua Số 2020 - FPT.
-    + 11095 ảnh đóng góp bởi 2 nhóm Goodgame và ICT.
-    + 6 lớp dữ liệu biển: `stop`, `left`, `right`, `straight`, `no_left`, `no_right`.
-- **VIA Lane segmentation dataset** - Dữ liệu phân đoạn vạch kẻ đường, lòng đường
-    + Là dữ liệu ảnh được chụp từ xe tự hành của cuộc thi Cuộc Đua Số 2020 - FPT.
-    + 7688 ảnh được thu thập và gán nhãn bởi nhóm Goodgame.
-    + 3 lớp dữ liệu: `background` (nền), `road` (lòng đường), `lane_line` (vạch kẻ đường).
+- **VIA Traffic sign dataset** - Sign detection data for model autonomous vehicles
+    + Image data taken from self-driving cars of the Digital Race 2020 - FPT.
+    + 11095 photos contributed by 2 groups Goodgame and ICT.
+    + 6 sign data classes: `stop`, `left`, `right`, `straight`, `no_left`, `no_right`.
 
-Bộ dữ liệu này sẽ là tiền đề để chúng tôi xây dựng các mô hình học sâu cho dự án VIA trong thời gian tới. Chúng tôi cũng đã public để cộng đồng tải về và sử dụng.
+- **VIA Lane segmentation dataset** - Line segmentation data
+    + Image data taken from self-driving cars of the Digital Race 2020 - FPT.
+    + 7688 photos collected and labeled by the Goodgame team.
+    + 3 data layers: `background`, `road`, `lane_line` (road markings).
 
-**Tải bộ dữ liệu này tại đây:** <https://github.com/makerhanoi/via-datasets/releases/tag/v1.0>.
+This dataset will be the base dataset to build deep learning models for VIA project in the near future. We have also made it public for the community to download and use for free.
+
+**Download this dataset here:** <https://github.com/makerhanoi/via-datasets/releases/tag/v1.0>.
