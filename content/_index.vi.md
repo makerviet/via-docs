@@ -1,7 +1,7 @@
 ---
 version: 1
 title: VIA - Vietnam Autonomous
-description: "Vietnam Autonomous là một dự án nguồn mở được khởi xướng bởi MakerHanoi nhằm tạo ra một nền tảng mở về xe tự hành để học sinh, sinh viên và những người đam mê công nghệ và trí tuệ nhân tạo có thể tạo ra chiếc xe tự hành in 3D cho riêng mình, phục vụ mục đích học tập, nghiên cứu."
+description: "Vietnam Autonomous là một dự án nguồn mở được khởi xướng bởi Maker Việt nhằm tạo ra một nền tảng mở về xe tự hành để học sinh, sinh viên và những người đam mê công nghệ và trí tuệ nhân tạo có thể tạo ra chiếc xe tự hành in 3D cho riêng mình, phục vụ mục đích học tập, nghiên cứu."
 date: 2021-01-26T04:15:05+09:00
 draft: false
 # updatesBanner: "Banner - &nbsp; [Hugo ZDoc theme](https://github.com/zzossig/hugo-theme-zdoc) &nbsp; just arrived"
@@ -41,7 +41,7 @@ footer:
         - title: Nhóm Facebook
           link: https://www.facebook.com/groups/572642390175408/
         - title: Maker Hanoi
-          link: https://www.facebook.com/makerhanoi
+          link: https://www.facebook.com/makerviet.official
   contents: 
     align: left
     applySinglePageCss: false
