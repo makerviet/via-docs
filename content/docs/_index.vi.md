@@ -19,15 +19,15 @@ title: Dự án VIA
 
 ## VIA là một dự án nguồn mở!
 
-Trên góc nhìn là dự án nguồn mở, HanoiMaker rất mong muốn cộng đồng có thể chung tay đóng góp vào dự án này. Đóng góp có thể là các phản biện về định hướng dự án, thiết kế các module thành phần, hoặc trực tiếp tham gia vào viết mã và tài liệu cho các phần của dự án. Mọi chi tiết xin liên hệ [MakerHanoi](https://www.facebook.com/makerhanoi) với thông tin bên dưới.
+Trên góc nhìn là dự án nguồn mở, Maker Việt rất mong muốn cộng đồng có thể chung tay đóng góp vào dự án này. Đóng góp có thể là các phản biện về định hướng dự án, thiết kế các module thành phần, hoặc trực tiếp tham gia vào viết mã và tài liệu cho các phần của dự án. Mọi chi tiết xin liên hệ [Maker Việt](https://www.facebook.com/makerviet.official) với thông tin bên dưới.
 
 ## Liên hệ
 
-**MakerHanoi**
+**MakerViet**
 
 - **Website:** <http://makerviet.org/>.
-- **FB Fanpage:** <https://www.facebook.com/makerhanoi>.
-- **Email:** makerhanoi@gmail.com.
+- **FB Fanpage:** <https://www.facebook.com/makerviet.official>.
+- **Email:** makerviet.official@gmail.com.
 - **Địa chỉ:** Số 2 Dương Khuê, Mai Dịch, Cầu Giấy, Hà Nội.
 - **Điện thoại:** +84 904371185 hoặc +84 858899789.
 
