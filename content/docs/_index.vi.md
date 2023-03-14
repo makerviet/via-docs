@@ -8,7 +8,7 @@ title: Dự án VIA
     <h1 style="display: block">VIA - Vietnam Autonomous</h1>
 </div>
 
-**VIA - Vietnam Autonomous** là một dự án nguồn mở được khởi xướng bởi [Maker Việt](https://www.facebook.com/makerhanoi) nhằm tạo ra một nền tảng mở về xe tự hành để học sinh, sinh viên và những người đam mê công nghệ và trí tuệ nhân tạo có thể tạo ra chiếc xe tự hành in 3D cho riêng mình, phục vụ mục đích học tập, nghiên cứu. Dự án này gồm 4 phần chính:
+**VIA - Vietnam Autonomous** là một dự án nguồn mở được khởi xướng bởi [Maker Việt](https://www.facebook.com/makerviet.official) nhằm tạo ra một nền tảng mở về xe tự hành để học sinh, sinh viên và những người đam mê công nghệ và trí tuệ nhân tạo có thể tạo ra chiếc xe tự hành in 3D cho riêng mình, phục vụ mục đích học tập, nghiên cứu. Dự án này gồm 4 phần chính:
 
 - **VIA Bot:** Xe tự hành in 3D nguồn mở. Bao gồm khung xe in 3D, các bo mạch và các thuật toán phát hiện làn đường, biển báo và điều khiển xe. Phần cứng của chiếc xe này được thiết kế tối ưu về chi phí để mọi người đều có thể tiếp cận.
 - **VIA Dataset:** Bộ dữ liệu mở cho xe tự hành. Dựa trên mô hình xe tự hành đã xây dựng, cộng đồng sẽ đóng góp xây dựng các bộ dữ liệu để phát triển xe tự hành. Dữ liệu luôn là một yếu tố quyết định khi phát triển các thuật toán và mô hình trong lĩnh vực trí tuệ nhân tạo AI. Vì thế, bộ dữ liệu này sẽ là một tài nguyên quý giá cho những người mới học AI, đặc biệt trong lĩnh vực xe tự hành.
