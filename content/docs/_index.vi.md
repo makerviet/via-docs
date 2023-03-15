@@ -8,8 +8,6 @@ title: Dự án VIA
     <h1 style="display: block">VIA - Vietnam Autonomous</h1>
 </div>
 
-# Dự án VIA - Vietnam Autonomous
-
 **VIA - Vietnam Autonomous** là một dự án nguồn mở (open source) được khởi xướng bởi Maker Việt nhằm tạo ra một nền tảng mở về robotics và xe tự hành để học sinh, sinh viên và những người đam mê công nghệ và trí tuệ nhân tạo có thể dễ dành tạo ra các sản phẩm về robotics và xe tự hành cho riêng mình, phục vụ mục đích học tập, nghiên cứu. Dự án này gồm 4 phần chính:
 
 - **VIA Hardware:** Các phiên bản bộ mạch phát triển với đầy đủ khối vi điều khiển nhúng, khối giao tiếp và khối công suất phục vụ cho mục đích điều khiển phần cứng cho robot và xe tự hành với tính thực dụng cao và chi phí thấp nhất. Bên cạnh đó, chúng tôi phát triển và đóng gói các phiên bản bộ kit robot và xe tự hành nguồn mở, với các cấu kiện cơ khí, động cơ… để phù hợp với nhu cầu của từng đối tượng khác nhau. Phần cứng của VIA được thiết kế tối ưu về chi phí và tính phổ biến của các thành phần để mọi người đều có thể tiếp cận.
