@@ -1,7 +1,7 @@
 ---
 version: 1
 title: Hello VIA! - Làm quen với VIA v0.1 - Python
-weight: -10
+weight: 10
 ---
 
 Đây là dự án làm quen với VIA. Dự án này sẽ giúp các bạn làm quen với bài toán xe tự hành thông qua một ví dụ nhỏ về phát hiện vạch kẻ đường và dựa vào đó để điều khiển xe đi trên giả lập đơn giản. Hướng dẫn sẽ bắt đầu bằng các thử nghiệm với ảnh trên Notebook này, sau đó sẽ áp dụng những gì đã học được để điều khiển xe đi trên giả lập ngay trên máy tính của các bạn.
