@@ -1,6 +1,6 @@
 ---
 version: 1
-title: 3. Phần cứng của VIA
+title: Phần cứng của VIA
 weight: 70
 ---
 

@@ -1,6 +1,6 @@
 ---
 version: 0
-title: 4. Công cụ lập trình nhúng cho phần cứng VIA
+title: Công cụ lập trình nhúng cho phần cứng VIA
 description: "."
 weight: 100
 ---
