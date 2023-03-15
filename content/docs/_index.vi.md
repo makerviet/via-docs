@@ -4,7 +4,7 @@ title: Dự án VIA
 ---
 
 <div style="text-align: center">
-    <img src="/media/via-logo.png" style="width: 8rem; border-radius: 50%; border: 3px solid #636162; padding: 0.5rem">
+    <img src="/media/via-logo.svg" style="width: 8rem; border-radius: 50%; border: 3px solid #636162; padding: 0.5rem">
     <h1 style="display: block">VIA - Vietnam Autonomous</h1>
 </div>
 
