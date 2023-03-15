@@ -1,7 +1,7 @@
 ---
 version: 1
 title: "Hướng dẫn cho Makerbot - BANHMI"
-weight: 25
+weight: 30
 draft: False
 ---
 

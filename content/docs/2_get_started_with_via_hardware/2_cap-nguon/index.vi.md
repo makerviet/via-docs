@@ -1,7 +1,7 @@
 ---
 version: 1
 title: Hướng dẫn cấp nguồn và lưu ý an toàn
-weight: 30
+weight: 20
 draft: False
 ---
 
