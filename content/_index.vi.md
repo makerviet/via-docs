@@ -7,7 +7,7 @@ draft: false
 # updatesBanner: "Banner - &nbsp; [Hugo ZDoc theme](https://github.com/zzossig/hugo-theme-zdoc) &nbsp; just arrived"
 landing:
   height: 600
-  image: /media/via-logo.png
+  image: /media/via-logo.svg
   title:
     - VIA - Vietnam Autonomous
   text:
