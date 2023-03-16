@@ -1,5 +1,5 @@
 ---
-version: 0
+version: 1
 title: Tay điều khiển gamepad với VIA
 weight: 70
 draft: False

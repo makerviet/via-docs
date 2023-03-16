@@ -1,5 +1,5 @@
 ---
-version: 0
+version: 1
 title: Dự án: VIA B MakerBot
 weight: 40
 draft: False

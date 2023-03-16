@@ -1,5 +1,5 @@
 ---
-version: 0
+version: 1
 title: Dự án: Robot tự động
 weight: 60
 draft: False

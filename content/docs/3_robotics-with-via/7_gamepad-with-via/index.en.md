@@ -1,5 +1,5 @@
 ---
-version: 0
+version: 1
 title: Online Makerbot BOM
 weight: 30
 draft: False
