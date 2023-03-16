@@ -1,6 +1,6 @@
 ---
 version: 1
-title: Tổng quan về VIA
+title: Tổng quan về nền tảng VIA
 weight: 10
 ---
 
