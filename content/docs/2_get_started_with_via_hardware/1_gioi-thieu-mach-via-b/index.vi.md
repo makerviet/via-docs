@@ -10,6 +10,8 @@ weight: 10
 
 [https://lh4.googleusercontent.com/G19uC-Zb3zfsNtBca6IXGphflKJ7A-l0X3NW1pPmilkvOxTFh3l5FHb8HpqzAQSJ4AlzNNFGWkJZOu6oGDUB7XqCgL05AHQAsOeRISSCJvNgpQeaHAaZoHBAAJW5riTuEXCZwtYKIxF3XFoqpm5wDec](https://lh4.googleusercontent.com/G19uC-Zb3zfsNtBca6IXGphflKJ7A-l0X3NW1pPmilkvOxTFh3l5FHb8HpqzAQSJ4AlzNNFGWkJZOu6oGDUB7XqCgL05AHQAsOeRISSCJvNgpQeaHAaZoHBAAJW5riTuEXCZwtYKIxF3XFoqpm5wDec)
 
+test test test
+
 - Mạch có chức năng điều khiển hệ thống động, cơ cảm biến.
 - Có khả năng kết nối truyền dữ liệu qua WIFI, BLE
 - Nhỏ gọn, có header tương thích với Raspberry PI.
