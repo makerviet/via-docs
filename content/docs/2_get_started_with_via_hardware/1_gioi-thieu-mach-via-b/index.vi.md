@@ -8,7 +8,7 @@ weight: 10
 
 ### **Mạch điều khiển**
 
-[https://lh4.googleusercontent.com/G19uC-Zb3zfsNtBca6IXGphflKJ7A-l0X3NW1pPmilkvOxTFh3l5FHb8HpqzAQSJ4AlzNNFGWkJZOu6oGDUB7XqCgL05AHQAsOeRISSCJvNgpQeaHAaZoHBAAJW5riTuEXCZwtYKIxF3XFoqpm5wDec](https://lh4.googleusercontent.com/G19uC-Zb3zfsNtBca6IXGphflKJ7A-l0X3NW1pPmilkvOxTFh3l5FHb8HpqzAQSJ4AlzNNFGWkJZOu6oGDUB7XqCgL05AHQAsOeRISSCJvNgpQeaHAaZoHBAAJW5riTuEXCZwtYKIxF3XFoqpm5wDec)
+![Mạch điều khiển VIA](/mach_dieu_khien.png "Mạch điều khiển VIA").
 
 - Mạch có chức năng điều khiển hệ thống động, cơ cảm biến.
 - Có khả năng kết nối truyền dữ liệu qua WIFI, BLE
@@ -18,7 +18,7 @@ weight: 10
 
 ### Mạch công suất
 
-[https://lh5.googleusercontent.com/wMMnZDb4i-kWUb718fbpP4YHlGLaZrvYQdQtGSv6z38qCj8YHVLnAWgMvhM1lGXnHWvuNd962_B9vy6ZlcsFaTQiJosQGoPWYR_PmlZ0XcfWZPjuKivA8-YmXAWLQTJiBps3dioSqo_wVtkiW76FK94](https://lh5.googleusercontent.com/wMMnZDb4i-kWUb718fbpP4YHlGLaZrvYQdQtGSv6z38qCj8YHVLnAWgMvhM1lGXnHWvuNd962_B9vy6ZlcsFaTQiJosQGoPWYR_PmlZ0XcfWZPjuKivA8-YmXAWLQTJiBps3dioSqo_wVtkiW76FK94)
+![Mạch công suất VIA](/mach_cong_suat.png "Mạch công suất VIA").
 
 - 4 đầu ra động cơ DC 5v , 6 đầu ra động cơ Servo 5-7V
 - 1 cổng I2C, 1 cổng SPI

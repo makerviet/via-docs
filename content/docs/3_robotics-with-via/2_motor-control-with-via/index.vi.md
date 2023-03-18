@@ -22,7 +22,7 @@ Motor giảm tốc được cấu tạo từ hai thành phần chính là:
 
 Động Cơ Giảm Tốc Trục D là loại motor kim loại sử dụng loại hộp giảm tốc bánh răng thép. Bền có độ chính xác cao.
 
-- **Noi day motor voi board VIA B**
+- **Kết nối motor với mạch VIA B**
 
 [https://lh3.googleusercontent.com/oaRxzNqAZs-mCAANZgL2PWZYlgkN-uMe5N5YB-R0icS4uiBlgw9DlifqpRauG0JlAL0wTP_yGAvJS2cO0P5Vs2xphVinV91Dy8BKmvC62erwwVWhcMcR_5WMvSEYNXJHYNQAStQkKYXbrbRF72wUWLI](https://lh3.googleusercontent.com/oaRxzNqAZs-mCAANZgL2PWZYlgkN-uMe5N5YB-R0icS4uiBlgw9DlifqpRauG0JlAL0wTP_yGAvJS2cO0P5Vs2xphVinV91Dy8BKmvC62erwwVWhcMcR_5WMvSEYNXJHYNQAStQkKYXbrbRF72wUWLI)
 
