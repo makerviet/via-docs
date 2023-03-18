@@ -8,7 +8,7 @@ weight: 10
 
 ### **Mạch điều khiển**
 
-![Mạch điều khiển VIA](/mach_dieu_khien.png "Mạch điều khiển VIA").
+![Mạch điều khiển VIA](mach_dieu_khien.png "Mạch điều khiển VIA").
 
 - Mạch có chức năng điều khiển hệ thống động, cơ cảm biến.
 - Có khả năng kết nối truyền dữ liệu qua WIFI, BLE
@@ -18,7 +18,7 @@ weight: 10
 
 ### Mạch công suất
 
-![Mạch công suất VIA](/mach_cong_suat.png "Mạch công suất VIA").
+![Mạch công suất VIA](mach_cong_suat.png "Mạch công suất VIA").
 
 - 4 đầu ra động cơ DC 5v , 6 đầu ra động cơ Servo 5-7V
 - 1 cổng I2C, 1 cổng SPI
