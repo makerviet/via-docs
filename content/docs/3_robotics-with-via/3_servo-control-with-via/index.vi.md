@@ -27,7 +27,7 @@ Khi động cơ vận hành thì vận tốc và vị trí sẽ được hồi t
 
 Để điều khiển động cơ servo, chúng ta vẫn sử dụng thư viện Adafruit_PWMServoDriver và thực hiện các bước khởi tạo tương tự động cơ DC thường đã hướng dẫn ở bài trước. Lưu ý sử dụng xung PWM ở tần số 50Hz.
 
-```cpp
+```
 pwm.setPWMFreq(50);
 ```
 
@@ -39,13 +39,13 @@ Cách điều khiển góc (đối với Servo 180) dựa theo độ rộng xung
 
 Tính độ giá trị PWM dựa theo thời gian ví dụ ở góc 180 độ
 
-```cpp
+```
 pwm_val = T_on/(Ts/4096) = 2/(20/4096) = 409.6
 ```
 
 Vậy để set góc 180 độ ta cần sử dụng:
 
-```cpp
+```
 pwm.setPWM(5, 0, 410); // chọn kênh servo số 5
 ```
 
@@ -53,12 +53,12 @@ pwm.setPWM(5, 0, 410); // chọn kênh servo số 5
 
 Đưa vào giá trị thời gian chính xác ở đơn vị micro giây
 
-```cpp
+```
 pwm.writeMicroseconds(kênh PWM, microsec); //Microsec, thời gian xung ở mức cao trong 1 chu kì (trạng thái bật)
 ```
 
 Ví dụ set góc 180 độ:
 
-```cpp
+```
 pwm.writeMicroseconds(5, 2000); // chọn kênh servo số 5
 ```
