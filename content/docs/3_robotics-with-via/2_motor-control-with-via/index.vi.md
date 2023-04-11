@@ -26,7 +26,7 @@ http://adafruit.github.io/Adafruit-PWM-Servo-Driver-Library/html/class_adafruit_
 #include <Adafruit_PWMServoDriver.h> // thư viện PCA9685
 ~~~
 
-**Khởi tạo clss của thư viện với địa chỉ gốc**
+**Khởi tạo class của thư viện với địa chỉ gốc**
 ~~~
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 ~~~
