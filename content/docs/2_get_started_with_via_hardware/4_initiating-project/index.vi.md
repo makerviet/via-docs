@@ -1,13 +1,15 @@
 ---
 version: 0
-title: "Dự án: Khởi tạo mạch VIA B"
+title: "Khởi tạo mạch VIA B"
 weight: 40
 draft: False
 ---
 
-# Kết nối mạch VIA B – Bánh Mì với máy tính
+## Kết nối mạch VIA B – Bánh Mì với máy tính
 
 Khi kết nối với máy tính, máy tính sẽ tự động tiến hành cài đặt driver cho mạch VIA B, sau khi cài đặt driver xong trên máy tính sẽ xuất hiện thiết bị *Silicon Labs CP210x USB to UART Bridge.
+
+## Xác định cổng COM đang được kết nối với mạch VIA B
 
 ***Đối với Windows***
 - Sau khi cài đặt driver, mạch VIA B sẽ được gán với 1 cổng COM trên máy, điền bên cạnh tên thiết bị. Ví dụ: *Silicon Labs CP210x USB to UART Bridge (COM 3)*
@@ -24,7 +26,7 @@ Có thể kiểm tra bằng lệnh *lsusb* và lệnh *ls /dev/ttyUSB* hoặc ls
 - Khởi động lại Mac
 - Sau khi hoàn thành Mac sẽ nhận cổng COM với tên “/dev/cu.SLAB_USBtoUART “
 
-# Cài đặt VIA B – Bánh Mì với Arduino
+## Cài đặt môi trường lập trình cho VIA B với Arduino IDE
 Do mạch VIA B sử dụng vi điều khiển ESP32, nên để lập trình cho mạch VIA bằng Arduino IDE, chúng ta cần cài đặt thêm ESP 32 qua Board Manager.
 Hướng dẫn cài đặt ESP32 trên Arduino:
 - Mở **Arduino IDE > File > Preferences**
@@ -33,7 +35,7 @@ Hướng dẫn cài đặt ESP32 trên Arduino:
 - Vào **Tool** > **Board** > **Boards Manager**
 - Tìm kiếm với từ khóa “esp32” , trong danh sách kết quả chọn “**ESP32 by Espressif Systems”** và nhấn **Install**
 
-# Sử dụng ví dụ mẫu Blink để thử lập trình và nạp code cho mạch VIA
+## Sử dụng ví dụ mẫu Blink để thử lập trình và nạp code cho mạch VIA
 Khởi chạy phần mềm Arduino và thực hiện các bước sau:
 
 - Mở File > Examples > Basics > Blink
