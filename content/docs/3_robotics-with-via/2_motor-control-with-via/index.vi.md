@@ -5,116 +5,78 @@ weight: 20
 draft: False
 ---
 
-- **So luoc ve dong co (motor)**
+# Các bước khởi tạo
 
-[https://lh5.googleusercontent.com/VaALPO5O6k0smp5y0FH61gKlCxIbXy0QEBYvIyIzXLKEJ94SyYuVGZgyg149Vcyueboev8XiKhyJnumzYa3IuGmKkuHfyUt_MsJSf6qh7CRnR1ZoHGluxPrg-PRzTZHiSS6i2tzOVZ8XNQ8ig9Wz47o](https://lh5.googleusercontent.com/VaALPO5O6k0smp5y0FH61gKlCxIbXy0QEBYvIyIzXLKEJ94SyYuVGZgyg149Vcyueboev8XiKhyJnumzYa3IuGmKkuHfyUt_MsJSf6qh7CRnR1ZoHGluxPrg-PRzTZHiSS6i2tzOVZ8XNQ8ig9Wz47o)
+**Sử dụng thư viện Adafruit PCA9685:**
+Link tải thư viện
+*https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library*
+Tài liệu
+http://adafruit.github.io/Adafruit-PWM-Servo-Driver-Library/html/class_adafruit___p_w_m_servo_driver.html
 
-Ở đây chúng ta sử dụng động cơ (Motor) giảm tốc.
+**Ví dụ mẫu điều khiển servo:**
+*File->examples->Adafruit-PWM-Servo-Driver-Library>servo*
+**Ví dụ mẫu băm xung PWM:**
+*File->examples->Adafruit-PWM-Servo-Driver-Library->PWMtest*
+**Tài liệu tham khảo về PWM:**
+*http://arduino.vn/reference/xung-pwm*
 
-Motor giảm tốc được định nghĩa là động cơ điện có tốc độ thấp, tốc độ đã giảm đi nhiều (có thể là 1/2, 1/3, 1/4, 1/5, 1/8, 1/10, 1/15,…) so với động cơ thông thường ở cùng công suất và số cực.
+**Khai báo thư viện**
+~~~
+#include <Wire.h> //thư viện I2c của Arduino, do PCA9685 sử dụng chuẩn giao tiếp i2c nên thư viện này bắt buộc phải khai báo 
+#include <Adafruit_PWMServoDriver.h> // thư viện PCA9685
+~~~
 
-Motor giảm tốc tuy có tốc độ nhỏ hơn motor thường nhưng lại có momen lớn, có thể tải được với hiệu suất cao.
+**Khởi tạo clss của thư viện với địa chỉ gốc**
+~~~
+Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
+~~~
 
-Motor giảm tốc được cấu tạo từ hai thành phần chính là:
+Hoặc khởi tạo với địa chỉ tùy biến khi kết nối nhiều mạch
+~~~
+Adafruit_PWMServoDriver pwm1 = Adafruit_PWMServoDrive(0x70); 
+Adafruit_PWMServoDriver pwm2 = Adafruit_PWMServoDrive(0x71);
+~~~
 
-- Động cơ điện
-- Hộp giảm tốc
+**Khởi tạo trong hàm setup**
+~~~
+pwm.begin(); //khởi tạo PCA9685 
+pwm.setOscillatorFrequency(27000000); // cài đặt tần số dao động 
+pwm.setPWMFreq(50);// cài đặt tần số PWM. Tần số PWM có thể được cài đặt trong khoảng 24-1600 HZ, tần số này được cài đặt tùy thuộc vào nhu cầu xử dụng. Để điều khiển được cả servo và động cơ DC cùng nhau, tần số PWM điều khiển được cài đặt trong khoảng 50-60Hz.
+Wire.setClock(400000); // cài đặt tốc độ giao tiếp i2c ở tốc độ cao nhất(400 Mhz). Hàm này có thể bỏ qua nếu gặp lỗi hoặc không có nhu cầu tử dụng I2c tốc độ cao
+~~~
 
-Động Cơ Giảm Tốc Trục D là loại motor kim loại sử dụng loại hộp giảm tốc bánh răng thép. Bền có độ chính xác cao.
+# Cấu trúc hàm băm xung pwm
+~~~
+pwm.setPWM(kênh PWM,toa độ bật, toa độ tắt); //toa độ trị bật, tọ//kênh PWM, kênh đầu ra có thế xem hình ở đầu slide và điền vào số kênh muốn điều khiển trong khoảng 0-15
+a đổ điểm bắt đầu nâng mức logic lên cao 0-4095 (2^12) 
+//giá trị bật quyết định tốc độ của động cơ (duty cycle), toa độ trị bắt, tọa đổ điểm kết thúc hạ nâng mức logic xuống thấp
+~~~
 
-- **Kết nối motor với mạch VIA B**
+**so sánh Hàm băm xung PWM với hàm analogWrite()**
+~~~
+pwm.setPWM(13 ,0, 255); // chọn chân số 13, giá trị pwm 255
+ tương đương
+analogWrite(13 , 255)
+~~~
+Hoặc
+~~~
+pwm.setPWM(13 ,0, 0); // chọn chân số 13, giá trị pwm 0
+ tương đương
+analogWrite(13 , 0)
 
-[https://lh3.googleusercontent.com/oaRxzNqAZs-mCAANZgL2PWZYlgkN-uMe5N5YB-R0icS4uiBlgw9DlifqpRauG0JlAL0wTP_yGAvJS2cO0P5Vs2xphVinV91Dy8BKmvC62erwwVWhcMcR_5WMvSEYNXJHYNQAStQkKYXbrbRF72wUWLI](https://lh3.googleusercontent.com/oaRxzNqAZs-mCAANZgL2PWZYlgkN-uMe5N5YB-R0icS4uiBlgw9DlifqpRauG0JlAL0wTP_yGAvJS2cO0P5Vs2xphVinV91Dy8BKmvC62erwwVWhcMcR_5WMvSEYNXJHYNQAStQkKYXbrbRF72wUWLI)
-
-- **Nguyên lý điều khiển động cơ**
-
-Điều khiển tốc độ motor bằng PWM là phương pháp thay đổi điện áp đặt vào động cơ. Người ta dùng mạch điện tử để thay đổi độ rộng của xung ngỏ ra mà không làm thay đổi tần số. Sự thay đổi độ rộng xung dẫn đến sự thay đổi của điện áp.
-
-> /* 3 tham số chính: kênh pwm (chân1, chân2); giá trị bật; giá trị tắt.
-VD: pwm.setPWM(kenh pwm, giá trị bật, giá trị tắt);
-giá trị bật, tắt chạy từ 0-2^12 (4095)
-giá trị bật quyết định tốc độ của động cơ, giá trị tắt = 4095 - giá trị bật
-Đối với điều khiển động cơ DC
-pwm.setPWM(chan1, 0, val) ;
-pwm.setPWM(chan2, 4095, 0) ;
-1 động cơ cần set 2 kênh điều khiển tốc độ.
-1 động cơ sử dụng 2 kênh của PCA9685, trong đó 1 kênh luôn ở trạng thái tắt.
-pwm.setPWM(chan2, 0, val) ;
-pwm.setPWM(chan1, 4095, 0) ; // quay ngược chiều
-val: giá trị dùng để điều khiển tốc độ động cơ, chạy trong khoảng 0-2^12
-ví dụ motor chạy với 50% tốc độ, khi đó val = 2^12/2 = 2048
-> 
-> 
-> pwm.setPWM(chan1, 0, 2048) ;
-> pwm.setPWM(chan2, 4095, 0) ;
-> 
-
-- **Code điều khiển motor**
-
-> 
-> 
-> 
-> #include <wire.h> // thư viện i2c của arduino
-> #include <adafruit_PWMServoDriver.h> // thư viện PCA9685
-> 
-> Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver(0x40);
-> 
-> #define DC_Motor 8-15 // mỗi motor dùng 1 cặp gồm 2 cổng [8,9], [10,11], [12,13], [14,15]
-> 
-> // ví dụ: #define DC_Motor 8,99
-> 
-> void setPWM(int chan1, int chan2, bool state, uint16_t val) // set xung pwm
-> {
-> 
-> if (state)  // state = 1 clockwise rotation
-> 
-> {
-> pwm.setPWM(chan1, 0, 4095);
-> pwm.setPWM(chan2, val, 4095 - val);
-> }
-> 
-> else  // state = 0 couter-clockwise rotation
-> {
-> pwm.setPWM(chan2, 0, 4095);
-> pwm.setPWM(chan1, val, 4095 - val);
-> }
-> 
-> }
-> 
-> /* 3 tham số chính: kênh pwm (chân1, chân2); giá trị bật; giá trị tắt.
-> 
-> VD: pwm.setPWM(kenh pwm, giá trị bật, giá trị tắt);
-> 
-> giá trị bật, tắt chạy từ 0-2^12 (4095)
-> 
-> giá trị bật quyết định tốc độ của động cơ, giá trị tắt = 4095 - giá trị bật
-> 
-> Đối với điều khiển động cơ DC
-> 
-> pwm.setPWM(chan1, 0, val) ;
-> 
-> pwm.setPWM(chan2, 4095, 0) ;
-> 
-> 1 động cơ cần set 2 kênh điều khiển tốc độ.
-> 
-> 1 động cơ sử dụng 2 kênh của PCA9685, trong đó 1 kênh luôn ở trạng thái tắt.
-> 
-> pwm.setPWM(chan2, 0, val) ;
-> 
-> pwm.setPWM(chan1, 4095, 0) ; // quay ngược chiều
-> 
-> val: giá trị dùng để điều khiển tốc độ động cơ, chạy trong khoảng 0-2^12
-> 
-> ví dụ motor chạy với 50% tốc độ, khi đó val = 2^12/2 = 2048
-> 
-> pwm.setPWM(chan1, 0, 2048) ;
-> 
-> pwm.setPWM(chan2, 4095, 0) ;
-> 
-> */
-> 
-> pwm.begin(); // khởi tạo PCA9685
-> pwm.setOscillatorFrequency(27000000); // cài đặt tần số dao động
-> pwm.setPWMFreq(1000); /* cài đặt tần số PWM, tùy vào nhu cầu sử dụng mà giá trị trong                                                                                      khoảng 0-1600 HZ.*/
-> Wire.setClock(400000); // cài đặt tốc độ giao tiếp I2C
->
+pwm.setPWM(chan2, 0, val); 
+pwm.setPWM(chan1, 4096, 0); //makerbot Sử dụng 2 kênh của PCA9685 , để điều khiển động cơ qua 1 chân luôn ở trạng thái tắt 
+~~~
+# Điều khiển động cơ DC bằng hàm băm xung PWM
+Ví dụ: điều khiển động cơ số 1 tốc độ quay 50%, chiều quay thuận
+~~~ 
+pwm.setPWM(8, 0, 2048); //chân số 8 set chiều dương là PWM 50%
+pwm.setPWM(9, 0, 0);    //chân số 9 set chiều âm 
+//điều khiển kênh 8 và 9 của động cơ 1, tốc độ 50% = 4096/2 
+~~~
+Ví dụ: điều khiển động cơ số 1 tốc độ quay 75%, chiều quay ngịch
+~~~ 
+pwm.setPWM(8, 0, 0);    //chân số 8 set chiều âm 
+pwm.setPWM(9, 0, 2730); //chân số 9 set chiều dương là PWM 75%
+//điều khiển kênh 8 và 9 của động cơ 1, tốc độ 75% = 4096/1.5
+~~~

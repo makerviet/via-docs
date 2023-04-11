@@ -1,6 +1,6 @@
 ---
 version: 1
-title: Giới thiệu về Mạch VIA B - Bánh Mì
+title: Giới thiệu về Mạch VIA B - Bánh Mì (2023 version)
 weight: 10
 ---
 
@@ -20,6 +20,6 @@ weight: 10
 
 ![Mạch công suất VIA](mach_cong_suat.png "Mạch công suất VIA").
 
-- 4 đầu ra động cơ DC 5v , 6 đầu ra động cơ Servo 5-7V
+- 4 đầu ra động cơ DC 12v , 6 đầu ra động cơ Servo
 - 1 cổng I2C, 1 cổng SPI
 - Header mở rộng 6 chân GPIO
