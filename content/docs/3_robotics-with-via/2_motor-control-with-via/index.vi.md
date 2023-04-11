@@ -46,11 +46,13 @@ Wire.setClock(400000); // cài đặt tốc độ giao tiếp i2c ở tốc đ�
 ~~~
 
 # Cấu trúc hàm băm xung pwm
+![](img1.png)
 ~~~
 pwm.setPWM(kênh PWM,toa độ bật, toa độ tắt); //toa độ trị bật, tọ//kênh PWM, kênh đầu ra có thế xem hình ở đầu slide và điền vào số kênh muốn điều khiển trong khoảng 0-15
 a đổ điểm bắt đầu nâng mức logic lên cao 0-4095 (2^12) 
 //giá trị bật quyết định tốc độ của động cơ (duty cycle), toa độ trị bắt, tọa đổ điểm kết thúc hạ nâng mức logic xuống thấp
 ~~~
+![](img2.png)
 
 **so sánh Hàm băm xung PWM với hàm analogWrite()**
 ~~~
