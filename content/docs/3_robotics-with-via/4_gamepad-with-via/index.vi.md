@@ -7,12 +7,13 @@ draft: False
 
 ## Tổng quan
 Có nhiều phương pháp để truyền tín hiệu điều khiển tới mạch VIA, từ đó lập trình để điều khiển robot. Ở bài hướng dẫn này, chúng tôi sẽ giới thiệu một phương pháp thường được dùng phổ biến trong các cuộc thi robot như Vietnam Robotics Challenge, đó là sử dụng bộ gamepad RF.
-![](img1.png)
+<img src="img1.png" alt= “” width="50%" height="50%">
 
 Bộ gamepad bao gồm 1 tay điều khiển và 1 bộ thu tín hiệu RF. Tín hiệu điều khiển được truyền từ tay điều khiển tới bộ thu tín hiệu thông qua sóng radio, sau đó có thể được truyền từ bộ thu vào mạch VIA thông qua giao thức SPI.
 
 ## Kết nối bộ thu với mạch VIA
-![](img2.png)![](img3.png)
+<img src="img2.png" alt= “” width="50%" height="50%">
+<img src="img3.png" alt= “” width="50%" height="50%">
 
 Sử dụng dây jumper để kết nối các chân SPI theo tiêu chuẩn từ bộ thu vào header SPI trên mạch VIA. Lưu ý: có 2 chân ta không sử dụng là  chân số 3 (Rumble motor) và chân số 7 (Acknowledge)
 Sau khi kết nối bộ thu với mạch VIA và cấp nguồn cho mạch VIA, đèn báo nguồn trên bộ thu sẽ nhấp nháy. Gắn pin vào tay điều khiển và bật nguồn, bộ thu và tay điều khiển sẽ tự kết nối với nhau. Khi đèn báo nguồn và đèn báo Rx trên bộ thu ngừng nhấp nháy tức là đã kết nối thành công.
@@ -24,8 +25,9 @@ Sau khi cài đặt thư viện, bạn có thể xem ví dụ mẫu điều khi�
 File->examples->Arduino-PS2X-ESP32-Makerbot>PS2X_Example_VIA_Makerbot_ESP32
 
 ## Bản đồ nút bấm và tín hiệu tương ứng
-![](img4.png)![](img5.png)
-![](img6.png)
+<img src="img4.png" alt= “” width="50%" height="50%">
+<img src="img5.png" alt= “” width="50%" height="50%">
+<img src="img6.png" alt= “” width="50%" height="50%">
 
 ## Ví dụ mẫu
 Tìm hiểu ví dụ đọc các nút bấm gửi từ tay điều khiển (PS2X_Example_VIA_Makerbot_ESP32) 
