@@ -6,7 +6,6 @@ draft: False
 ---
 
 # Tổng quan
-
 Có nhiều phương pháp để truyền tín hiệu điều khiển tới mạch VIA, từ đó lập trình để điều khiển robot. Ở bài hướng dẫn này, chúng tôi sẽ giới thiệu một phương pháp thường được dùng phổ biến trong các cuộc thi robot như Vietnam Robotics Challenge, đó là sử dụng bộ gamepad RF.
 ![](img1.png)
 
@@ -92,7 +91,6 @@ if (ps2x.ButtonReleased(PSB_SQUARE)) // Trả về giá trị TRUE khi nút đư
    Serial.println("□ just released"); 
 
 //Đọc nhiều nút bấm theo sự thay đổi trạng thái
-
 if (ps2x.NewButtonState()) {
   if (ps2x.Button(PSB_L3)) Serial.println("L3 pressed");
   if (ps2x.Button(PSB_R3)) Serial.println("R3 pressed"); 
