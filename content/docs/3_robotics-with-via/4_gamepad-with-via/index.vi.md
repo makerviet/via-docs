@@ -15,7 +15,10 @@ Bộ gamepad bao gồm 1 tay điều khiển và 1 bộ thu tín hiệu RF. Tín
 <img src="img2.png" alt= “” width="50%" height="50%">
 <img src="img3.png" alt= “” width="50%" height="50%">
 
-Sử dụng dây jumper để kết nối các chân SPI theo tiêu chuẩn từ bộ thu vào header SPI trên mạch VIA. Lưu ý: có 2 chân ta không sử dụng là  chân số 3 (Rumble motor) và chân số 7 (Acknowledge)
+Sử dụng dây jumper để kết nối các chân SPI theo tiêu chuẩn từ bộ thu vào header SPI trên mạch VIA.
+
+*Lưu ý: có 2 chân ta không sử dụng là  chân số 3 (Rumble motor) và chân số 7 (Acknowledge)*
+
 Sau khi kết nối bộ thu với mạch VIA và cấp nguồn cho mạch VIA, đèn báo nguồn trên bộ thu sẽ nhấp nháy. Gắn pin vào tay điều khiển và bật nguồn, bộ thu và tay điều khiển sẽ tự kết nối với nhau. Khi đèn báo nguồn và đèn báo Rx trên bộ thu ngừng nhấp nháy tức là đã kết nối thành công.
 
 ## Đọc tín hiệu từ gamepad
