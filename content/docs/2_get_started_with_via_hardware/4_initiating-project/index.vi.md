@@ -40,7 +40,7 @@ Khởi chạy phần mềm Arduino và thực hiện các bước sau:
 
 - Mở File > Examples > Basics > Blink
 - Khai báo chân LED_BUILTIN là chân số 13
-- Tại mục Tools chọn Board > ESP32 Dev Module; Port > COM (chọn cổng COM tương ứng đã tra cứu tại mục a).
+- Tại mục Tools chọn Board > ESP32 Dev Module; Port > COM (chọn cổng COM đã xác định được ở bước trên).
 - Verify và nạp code (dấu tick và mũi tên góc trên bên trái giao diện Arduino IDE):
 
 ```
