@@ -4,8 +4,9 @@ title: Điều  khiển động cơ với mạch VIA B
 weight: 20
 draft: False
 ---
+## Kết nối động cơ servo với mạch VIA
 
-# Các bước khởi tạo
+## Các bước khởi tạo
 
 **Sử dụng thư viện Adafruit PCA9685:**
 Link tải thư viện
@@ -45,7 +46,7 @@ pwm.setPWMFreq(50);// cài đặt tần số PWM. Tần số PWM có thể đư�
 Wire.setClock(400000); // cài đặt tốc độ giao tiếp i2c ở tốc độ cao nhất(400 Mhz). Hàm này có thể bỏ qua nếu gặp lỗi hoặc không có nhu cầu tử dụng I2c tốc độ cao
 ~~~
 
-# Cấu trúc hàm băm xung pwm
+## Cấu trúc hàm băm xung pwm
 ![](img1.png)
 ~~~
 pwm.setPWM(kênh PWM,toa độ bật, toa độ tắt); //toa độ trị bật, tọ//kênh PWM, kênh đầu ra có thế xem hình ở đầu slide và điền vào số kênh muốn điều khiển trong khoảng 0-15
@@ -69,7 +70,7 @@ analogWrite(13 , 0)
 pwm.setPWM(chan2, 0, val); 
 pwm.setPWM(chan1, 4096, 0); //makerbot Sử dụng 2 kênh của PCA9685 , để điều khiển động cơ qua 1 chân luôn ở trạng thái tắt 
 ~~~
-# Điều khiển động cơ DC bằng hàm băm xung PWM
+## Điều khiển động cơ DC bằng hàm băm xung PWM
 Ví dụ: điều khiển động cơ số 1 tốc độ quay 50%, chiều quay thuận
 ~~~ 
 pwm.setPWM(8, 0, 2048); //chân số 8 set chiều dương là PWM 50%
@@ -82,3 +83,8 @@ pwm.setPWM(8, 0, 0);    //chân số 8 set chiều âm
 pwm.setPWM(9, 0, 2730); //chân số 9 set chiều dương là PWM 75%
 //điều khiển kênh 8 và 9 của động cơ 1, tốc độ 75% = 4096/1.5
 ~~~
+
+## Ví dụ mẫu điều khiển động cơ qua Wifi
+https://github.com/makerviet/maker-bot/tree/main/firmware/Maker_bot_motor_test
+
+Bạn có thể sử dụng ví dụ mẫu trên để kiểm tra hoạt động của mạch VIA và các động cơ. Trong ví dụ, mạch VIA sẽ tạo 1 webserver trong mạng local, bạn có thể truy cập vào trang web đó để điều khiển tốc độ, chiều quay, góc quay của tất cả các động cơ DC và servo.
