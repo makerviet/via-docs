@@ -12,7 +12,7 @@ Lưu ý: Để sử dụng khối công suất, cần cấp nguồn 12V theo cá
 ### Cấp nguồn 12V
 Bạn có thể lựa chọn 1 trong 2 cách sau:
 - Cấp nguồn qua cổng cấp nguồn DC 12V (DC5.5x2.5MM) trên mạch điều khiển.
-- Cấp nguồn qua cổng cấp nguồn DC 12V (jack KF-3.81-2/jack XT-60) trên mạch công suất.
+- Cấp nguồn qua cổng cấp nguồn DC 12V (jack KF-5.08-2/jack XT-60) trên mạch công suất.
 
 
 # Quy tắc an toàn khi sử dụng mạch VIA B - Bánh Mì
