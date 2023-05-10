@@ -6,7 +6,9 @@ draft: False
 ---
 
 ## Kết nối động cơ servo với mạch VIA
-
+Bạn có thể kết nối động cơ vào 1 trong 6 cổng servo trên mạch công suất
+**Lưu ý:** ghi nhớ kênh PWM của các cổng servo
+![](via_motorshield_ports.png)
 ## Các bước khởi tạo
 Để điều khiển động cơ servo, chúng ta vẫn sử dụng thư viện Adafruit_PWMServoDriver và thực hiện các bước khởi tạo tương tự động cơ DC thường đã hướng dẫn ở bài trước. Lưu ý sử dụng xung PWM ở tần số 50Hz.
 

@@ -32,3 +32,6 @@ Mạch điều khiển VIA có chân kết nối với máy tính nhúng Pi, gi�
 - 1 cổng cấp nguồn DC 12V (jack KF-3.81-2 hoặc jack XT-60 tùy theo lô sản xuất)
 - Các cổng giao tiếp mở rộng: 1 cổng I2C, 1 cổng SPI
 - Header GPIO mở rộng: 6 chân GPIO, 2 chân cấp nguồn 5V-GND
+
+**Các cổng cắm trên mạch công suất VIA**
+![](via_motorshield_ports.png)
