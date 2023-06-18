@@ -55,7 +55,7 @@ sections:
   - bgcolor: "#00478e"
     type: card
     description: "The core components of VIA project"
-    header: 
+    header:
       title: Platform
       hlcolor: "#ffeb0080"
       color: '#fff'

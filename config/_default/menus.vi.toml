@@ -5,12 +5,6 @@
   weight = 1
 
 [[main]]
-  identifier = "Updates"
-  name = "Cập nhật"
-  url = "updates"
-  weight = 2
-
-[[main]]
   identifier = "Blog"
   name = "Blog"
   url = "blog"

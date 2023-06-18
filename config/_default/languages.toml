@@ -3,7 +3,7 @@
   languageName = "Tiếng Việt"
   weight = 10
 
-[en]
-  title = "VIA Autonomous"
-  languageName = "English"
-  weight = 20
+#[en]
+#  title = "VIA Autonomous"
+#  languageName = "English"
+#  weight = 20
