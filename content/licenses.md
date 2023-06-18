@@ -7,8 +7,9 @@ draft: false
 
 #### Media license
 
-<div>Icons made by:
+<div style="padding:1rem">
+Icons made by:
 <li>
-    <a href="https://www.flaticon.com/authors/shmai" title="shmai">shmai</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    <a href="https://www.flaticon.com/authors/shmai" title="shmai">shmai</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>.
 </li>
 </div>

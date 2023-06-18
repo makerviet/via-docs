@@ -21,18 +21,16 @@ Hoặc sử dụng form liên hệ phía dưới.
 <form id="contact-form"
   action="https://formspree.io/f/meqpylya"
   method="POST">
-
 <b>Email và tên của bạn</b>
 <input class="input" type="email" name="_replyto">
-
 <b>Nội dung</b>
 <textarea class="input" name="message"></textarea>
-
-  <button type="submit" class="button">Gửi cho chúng tôi</button>
+<button type="submit" class="button">Gửi cho chúng tôi</button>
 </form>
 
 <style>
     #contact-form {
+      padding: 1rem;
     }
     #contact-form input, #contact-form textarea {
         display: block;
