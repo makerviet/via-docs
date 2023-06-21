@@ -4,7 +4,6 @@ title: VIA - Vietnam Autonomous
 description: "Vietnam Autonomous là một dự án nguồn mở được khởi xướng bởi Maker Việt nhằm tạo ra một nền tảng mở về robotics, xe tự hành và trí tuệ nhân tạo dành cho học sinh, sinh viên và những người đam mê công nghệ và trí tuệ nhân tạo tại Việt Nam."
 date: 2023-04-26T04:15:05+09:00
 draft: false
-# updatesBanner: "Banner - &nbsp; [Hugo ZDoc theme](https://github.com/zzossig/hugo-theme-zdoc) &nbsp; just arrived"
 landing:
   height: 600
   image: /media/via-logo.svg
@@ -19,9 +18,6 @@ landing:
     - link: docs
       text: KHÁM PHÁ
       color: primary
-  # backgroundImage: 
-  #   src: images/landscape.jpg
-  #   height: 600
 footer:
   sections:
     - title: Tài nguyên
@@ -42,19 +38,19 @@ footer:
           link: https://www.facebook.com/groups/572642390175408/
         - title: Maker Hanoi
           link: https://www.facebook.com/makerviet.official
-  contents: 
+  contents:
     align: left
     applySinglePageCss: false
     markdown:
       |
       ## VIA - Vietnam Autonomous
-      Copyright © 2021. All rights reserved.
+      Copyright © 2023. All rights reserved.
 
 sections:
   - bgcolor: "#00478e"
     type: card
     description: "Các thành phần chính xây dựng lên dự án VIA"
-    header: 
+    header:
       title: Nền tảng
       hlcolor: "#8bc34a"
       color: '#fff'
@@ -99,13 +95,6 @@ sections:
           bgcolor: 'white'
   - bgcolor: "#04718c"
     type: normal
-    # description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eleifend erat. Integer eget mattis augue. Suspendisse semper laoreet tortor sed convallis. Nulla ac euismod lorem"
-    # header:
-    #   title: Xây dựng với mã nguồn VIA
-    #   hlcolor: "#f6ff00"
-    #   color: "#323232"
-    #   fontSize: 32
-    #   width: 340
     body:
       subtitle: Hãy cùng đóng góp và xây dựng
       subtitlePosition: left

@@ -5,10 +5,22 @@
   weight = 1
 
 [[main]]
+  identifier = "simulation"
+  name = "Giả lập Online VIA"
+  url = "https://via-sim.makerviet.org"
+  weight = 2
+
+[[main]]
   identifier = "Blog"
-  name = "Blog"
+  name = "Bài viết"
   url = "blog"
   weight = 3
+
+[[main]]
+  identifier = "ebook"
+  name = "Sách Robotics - MakerViet"
+  url = "https://via.makerviet.org/ebook"
+  weight = 2
 
 [[main]]
   identifier = "Contact"
