@@ -65,22 +65,3 @@ python drive.py
 
 Click chuột trở lại cửa sổ của trình giả lập, xe sẽ tự động chạy trên bản đồ đã tạo.
 
-## III. Kiểm thử và gỡ lỗi
-
-Để phục vụ cho việc kiểm thử và gỡ lỗi thuật toán tự hành, chúng ta cần trích xuất hình ảnh sau khi được xử lí ở từng bước trong thuật toán theo thời gian thực. (Xem lại bài bài [Hello VIA!](/vi/docs/getting-started/hello-via/) để hiểu về các bước trong thuật toán xử lí ảnh cho xe tự hành)
-
-**VIA Visualizer** sẽ giúp chúng ta thực hiện điều trên. Sau khi chạy file `drive.py`, mở trình duyệt web và nhập địa chỉ sau:
-
-[http://localhost:4567](http://localhost:4567)
-
-Chúng ta sẽ thấy hình ảnh từ giả lập đã qua thuật toán xử lí được hiển thị theo thời gian thực ngay trên trình duyệt.
-![](mkKweCp.png)
-
-Chúng ta có thể lựa chọn hình ảnh muốn xem được trích xuất tại bước nào của thuật toán tại menu ***Select image topic***. Ví dụ, ở hình dưới mình đang xem hình ảnh khi đã qua bước phát hiện cạnh canny.
-
-![](skJkCVX.png)
-
-![](V9BRMhS.png)
-
-Chúc các bạn thành công sáng tạo và thử nghiệm được các bản đồ của riêng mình!
-
