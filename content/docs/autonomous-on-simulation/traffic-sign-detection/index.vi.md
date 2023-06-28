@@ -10,7 +10,7 @@ weight: -9
 
 Như ở phần trước, chúng tôi cũng chuẩn bị Notebook Colab để bạn có thể thực hành:
 
-[https://colab.research.google.com/github/makerviet/hello-via-2/blob/master/notebooks/Traffic-Sign-Detection.ipynb](https://colab.research.google.com/github/makerviet/hello-via-2/blob/master/notebooks/Traffic-Sign-Detection.ipynb).
+[https://colab.research.google.com/github/makerviet/hello-via/blob/master/notebooks/Traffic-Sign-Detection.ipynb](https://colab.research.google.com/github/makerviet/hello-via/blob/master/notebooks/Traffic-Sign-Detection.ipynb).
 
 **Thuật toán phát hiện và phân loại biển báo giao thông gồm 3 bước:**
 
@@ -168,7 +168,7 @@ def detect_traffic_signs(img, model, draw=None):
 Hãy thử chạy phát hiện biển báo giao thông và phân loại biển báo giao thông đồng thời. Clone, chạy mã nguồn lái xe và chọn bản đồ biển báo giao thông từ mô phỏng để trải nghiệm mã của chúng tôi.
 
 ```python
-git clone https://github.com/makerviet/hello-via-2
+git clone https://github.com/makerviet/hello-via
 cd self-driving-car-tutorial/p2_traffic_sign_detection
 pip3 install -r requirements.txt
 python3 drive.py
@@ -185,4 +185,4 @@ Huấn luyện một mô hình AI của riêng bạn là điều khá thú vị.
 
 **Truy cập sổ tay huấn luyện:**
 
-[https://colab.research.google.com/github/makerviet/hello-via-2/blob/master/notebooks/Traffic-Sign-Classifier-Training.ipynb](https://colab.research.google.com/github/makerviet/hello-via-2/blob/master/notebooks/Traffic-Sign-Classifier-Training.ipynb).
+[https://colab.research.google.com/github/makerviet/hello-via/blob/master/notebooks/Traffic-Sign-Classifier-Training.ipynb](https://colab.research.google.com/github/makerviet/hello-via/blob/master/notebooks/Traffic-Sign-Classifier-Training.ipynb).

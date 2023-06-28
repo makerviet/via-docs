@@ -29,7 +29,7 @@ Phát hiện vạch kẻ đường là một tính năng thông minh có mặt t
 ![](image17.png)
 
 
-Chúng tôi đã chuẩn bị một sổ ghi Colab cho bạn thử nghiệm các thuật toán mà không cần các bước phức tạp để cài đặt các phần mềm tại máy tính cá nhân. [Mở sổ ghi Colab](https://www.google.com/url?q=https://colab.research.google.com/github/makerviet/hello-via-2/blob/master/notebooks/Lane-Line-Detection.ipynb&sa=D&source=editors&ust=1687371449455330&usg=AOvVaw3ZULLqNtHSqElJjrJb8qvp).
+Chúng tôi đã chuẩn bị một sổ ghi Colab cho bạn thử nghiệm các thuật toán mà không cần các bước phức tạp để cài đặt các phần mềm tại máy tính cá nhân. [Mở sổ ghi Colab](https://www.google.com/url?q=https://colab.research.google.com/github/makerviet/hello-via/blob/master/notebooks/Lane-Line-Detection.ipynb&sa=D&source=editors&ust=1687371449455330&usg=AOvVaw3ZULLqNtHSqElJjrJb8qvp).
 
 Không gian màu phổ biến nhất trong OpenCV là BGR, tất cả các pixel màu trong một hình ảnh từ ba thành phần màu cơ bản (B - xanh lam, G - xanh lá cây và R - đỏ). Tuy nhiên, chúng ta chỉ cần hình ảnh xám cho thuật toán phát hiện vạch kẻ đường đơn giản, vì vậy chúng ta chuyển đổi các hình ảnh từ không gian màu BGR sang ảnh xám. Bước này có thể được thực hiện chỉ với một dòng lệnh trong OpenCV:
 
@@ -252,7 +252,7 @@ Ngoài việc chọn các bản đồ đã thiết kế trước, chúng ta cũn
 Tôi cũng đã chuẩn bị một mã nguồn kết hợp tất cả các hàm mà chúng ta đã xây dựng từ đầu của bài hướng dẫn này để kết nối và điều khiển xe mô phỏng. Sử dụng:
 
 ```bash
-git clone https://github.com/makerviet/hello-via-2
+git clone https://github.com/makerviet/hello-via
 cd self-driving-car-tutorial/p1_lane_line_detection
 pip3 install -r requirements.txt
 python3 drive.py
