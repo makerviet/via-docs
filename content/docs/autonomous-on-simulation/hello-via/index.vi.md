@@ -356,9 +356,9 @@ Tôi cũng đã chuẩn bị một mã nguồn kết hợp tất cả các hàm 
 
 ```bash
 git clone https://github.com/makerviet/hello-via
-cd 04-Phat-hien-vach-ke-duong.ipynb
-pip3 install -r requirements.txt
-python3 drive.py
+cd p1_lane_line_detection
+pip install -r requirements.txt
+python drive.py
 ```
 
 **Lưu ý:** Nếu bạn đã tải giả lập trước khi bắt đầu `drive.py`, bạn có thể cần làm mới trang web giả lập để xe chạy. Sử dụng Ctrl + R hoặc F5 để làm mới trang web và chọn lại bản đồ của bạn.
