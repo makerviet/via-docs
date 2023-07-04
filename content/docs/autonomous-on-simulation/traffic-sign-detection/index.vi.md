@@ -4,7 +4,7 @@ title: Phát hiện biển báo giao thông
 weight: -9
 ---
 
-Ở [phần 1 Hello VIA!](https://github.com/makerviet/via-docs/blob/master/content/docs/autonomous-on-simulation/hello-via/index.vi.md), chúng ta đã làm quen với việc xây dựng xe tự lái trên giả lập VIA. Trong phần này, chúng ta sẽ tìm hiểu về phát hiện biển báo giao thông. Chúng ta sẽ áp dụng các kỹ thuật xử lý ảnh và mạng nơ-ron để phát hiện và phân loại 6 loại biển báo giao thông (dừng, rẽ trái, rẽ phải, cấm rẽ trái, cấm rẽ phải, và đi thẳng).
+Ở [phần 1 Hello VIA!](https://via.makerviet.org/vi/docs/autonomous-on-simulation/hello-via/), chúng ta đã làm quen với việc xây dựng xe tự lái trên giả lập VIA. Trong phần này, chúng ta sẽ tìm hiểu về phát hiện biển báo giao thông. Chúng ta sẽ áp dụng các kỹ thuật xử lý ảnh và mạng nơ-ron để phát hiện và phân loại 6 loại biển báo giao thông (dừng, rẽ trái, rẽ phải, cấm rẽ trái, cấm rẽ phải, và đi thẳng).
 
 ![](image7.png)
 
